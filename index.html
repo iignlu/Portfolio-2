@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdullah Alshehri | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<body>
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-text">Abdullah</span>
+                <span class="logo-dot">.</span>
+            </a>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#certificates" class="nav-link">Certificates</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#home" class="mobile-link">Home</a>
+        <a href="#skills" class="mobile-link">Skills</a>
+        <a href="#projects" class="mobile-link">Projects</a>
+        <a href="#certificates" class="mobile-link">Certificates</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="greeting" data-aos="fade-up">
+                    <span class="wave">👋</span>
+                    <span>Hello, it's me</span>
+                </div>
+                <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+                    Abdullah Alshehri
+                </h1>
+                <div class="typing-container" data-aos="fade-up" data-aos-delay="200">
+                    <h2 class="hero-subtitle">And I'm a <span class="typed-text"></span><span class="cursor">|</span>
+                    </h2>
+                </div>
+                <p class="hero-description" data-aos="fade-up" data-aos-delay="300">
+                    I'm a front-end developer specializing in creating responsive, user-friendly web interfaces.
+                    I turn design concepts into interactive, functional websites using HTML, CSS, and JavaScript
+                    frameworks.
+                </p>
+                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
+                    <a href="#contact" class="btn btn-primary">
+                        <span>Get In Touch</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="CV-Abdullah.pdf" class="btn btn-secondary" download>
+                        <i class="fas fa-download"></i>
+                        <span>Download CV</span>
+                    </a>
+                </div>
+                <div class="social-links" data-aos="fade-up" data-aos-delay="500">
+                    <a href="https://www.linkedin.com/in/abdullah-alshehri-596658250/" class="social-link"
+                        aria-label="LinkedIn" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/iignlu/" class="social-link" aria-label="GitHub" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://discordapp.com/users/iignlu" class="social-link" aria-label="Discord"
+                        target="_blank">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                    <a href="mailto:abd.alshehri.2004@gmail.com" class="social-link" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual" data-aos="fade-left" data-aos-delay="300">
+                <div class="floating-card card-1">
+                    <i class="fas fa-code"></i>
+                    <span>Clean Code</span>
+                </div>
+                <div class="floating-card card-2">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Responsive</span>
+                </div>
+                <div class="floating-card card-3">
+                    <i class="fas fa-rocket"></i>
+                    <span>Fast</span>
+                </div>
+                <div class="floating-card card-4">
+                    <i class="fas fa-palette"></i>
+                    <span>Creative</span>
+                </div>
+                <div class="hero-3d-object">
+                    <div class="cube">
+                        <div class="cube-face front"></div>
+                        <div class="cube-face back"></div>
+                        <div class="cube-face right"></div>
+                        <div class="cube-face left"></div>
+                        <div class="cube-face top"></div>
+                        <div class="cube-face bottom"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">What I Know</span>
+                <h2 class="section-title">Skills Learned</h2>
+                <p class="section-description">Through my computer science journey, I've acquired a diverse set of
+                    skills</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="skill-title">Problem-Solving</h3>
+                    <p class="skill-description">
+                        I've learned how to approach complex problems step by step. CS taught me to think logically
+                        and break things down into smaller, solvable parts.
+                    </p>
+                    <div class="skill-glow"></div>
+                </div>
+
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="skill-title">Programming</h3>
+                    <p class="skill-description">
+                        I've spent a lot of time coding in languages like Java and C++. It's helped me understand
+                        how to actually build things from scratch.
+                    </p>
+                    <div class="skill-glow"></div>
+                </div>
+
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3 class="skill-title">Data Structures & Algorithms</h3>
+                    <p class="skill-description">
+                        I got a solid foundation in how data is organized and how to make my code more efficient —
+                        which really helps in both projects and interviews.
+                    </p>
+                    <div class="skill-glow"></div>
+                </div>
+
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="skill-title">Databases</h3>
+                    <p class="skill-description">
+                        I learned how to design and manage databases using SQL. It's cool to know how data is
+                        structured and retrieved in real apps.
+                    </p>
+                    <div class="skill-glow"></div>
+                </div>
+
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="skill-title">Software Development & Teamwork</h3>
+                    <p class="skill-description">
+                        Through group projects and version control tools like Git, I've learned how to build
+                        software with others — just like in the real world.
+                    </p>
+                    <div class="skill-glow"></div>
+                </div>
+
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="skill-title">Network Systems</h3>
+                    <p class="skill-description">
+                        I've explored how data moves across networks — from IP addresses to protocols. It gave me
+                        a better understanding of how the internet and communication work.
+                    </p>
+                    <div class="skill-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">My Work</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-description">A collection of projects showcasing my design and development skills</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div class="project-tags">
+                                <span class="project-tag">Machine Learning</span>
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">Ongoing</span>
+                            </div>
+                            <a href="#" class="project-link-btn" aria-label="View Project">
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <h3 class="project-title">Diabetic Retinopathy Detection</h3>
+                        <p class="project-description">
+                            Developing a machine learning model for automated retinal image analysis to support early
+                            detection of diabetic retinopathy.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div class="project-tags">
+                                <span class="project-tag">UI/UX</span>
+                                <span class="project-tag">Figma</span>
+                            </div>
+                            <a href="https://www.figma.com/proto/HelFDeirEXoyU8EMXwmTDv/Portfolio?page-id=0%3A1&node-id=1-2&starting-point-node-id=1%3A2&scaling=scale-down&content-scaling=fixed&t=w2T3VpTPYyWc4i8H-1"
+                                target="_blank" class="project-link-btn" aria-label="View Project">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <h3 class="project-title">Portfolio UI Design</h3>
+                        <p class="project-description">
+                            I've made a User Interface for a portfolio web-site to show my skills that I've learned
+                            in college also the projects that I've made.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div class="project-tags">
+                                <span class="project-tag">HCI</span>
+                                <span class="project-tag">IoT</span>
+                                <span class="project-tag">Figma</span>
+                            </div>
+                            <a href="https://www.figma.com/proto/iD14fiTcvIa8p8SMMcsFm0/Plant-Watering?node-id=1-1810&p=f&t=OsQGeEC3eX3hdjmR-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=6%3A28"
+                                target="_blank" class="project-link-btn" aria-label="View Project">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <h3 class="project-title">Plant Watering System</h3>
+                        <p class="project-description">
+                            I've made a User Interface for an HCI course project that focuses on maintaining the
+                            plants in your house watered and sends alerts if any bad readings by the sensors.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div class="project-tags">
+                                <span class="project-tag">UI/UX</span>
+                                <span class="project-tag">Competition</span>
+                            </div>
+                            <a href="https://www.figma.com/proto/PzD6Wcc2sbsnxttANUyABM/CSIT-Project?node-id=33-382&p=f&t=eLSFOh6CJA3QyLi9-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A2120"
+                                target="_blank" class="project-link-btn" aria-label="View Project">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <h3 class="project-title">Wikipedia Redesign</h3>
+                        <p class="project-description">
+                            I participated in a UI/UX design competition aimed at improving the Wikipedia interface.
+                            The goal was to create a cleaner, more intuitive, and user-friendly experience.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div class="project-tags">
+                                <span class="project-tag">Web Dev</span>
+                                <span class="project-tag">HTML/CSS</span>
+                            </div>
+                            <a href="https://alshehri-portfolio.netlify.app/" target="_blank" class="project-link-btn"
+                                aria-label="View Project">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <h3 class="project-title">Portfolio Website</h3>
+                        <p class="project-description">
+                            I've made a portfolio web-site to introduce myself and what I've learned in college,
+                            also to show some of the projects that I've made.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="certificates">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Credentials</span>
+                <h2 class="section-title">Certificates</h2>
+                <p class="section-description">Professional certifications and courses I've completed</p>
+            </div>
+            <div class="certificates-grid">
+                <div class="certificate-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="certificate-header">
+                        <div class="certificate-icon">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <span class="certificate-issuer">Google</span>
+                    </div>
+                    <h3 class="certificate-title">Foundations: Data, Data, Everywhere</h3>
+                    <p class="certificate-description">
+                        Completed an introductory course in data analytics covering key concepts, tools, and processes.
+                        Gained practical skills in data cleaning, analysis, and visualization using spreadsheets, SQL,
+                        R, and Tableau.
+                    </p>
+                </div>
+
+                <div class="certificate-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="certificate-header">
+                        <div class="certificate-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <span class="certificate-issuer">Coursera Project Network</span>
+                    </div>
+                    <h3 class="certificate-title">Python for Data Analysis: Pandas & NumPy</h3>
+                    <p class="certificate-description">
+                        Hands-on project applying Python's Pandas and NumPy for efficient data manipulation, cleaning,
+                        and analysis.
+                    </p>
+                </div>
+
+
+                <div class="certificate-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="certificate-header">
+                        <div class="certificate-icon">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <span class="certificate-issuer">Google Cloud Skills Boost</span>
+                    </div>
+                    <h3 class="certificate-title">Introduction to SQL for BigQuery and Cloud SQL</h3>
+                    <p class="certificate-description">
+                        Learned to write and execute SQL queries on Google Cloud using BigQuery and Cloud SQL for data
+                        analysis and management.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Get In Touch</span>
+                <h2 class="section-title">Contact Me</h2>
+                <p class="section-description">Let's work together on your next project</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>abd.alshehri.2004@gmail.com</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Phone</h3>
+                        <p>+966 53 698 0276</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Location</h3>
+                        <p>Jubail, Saudi Arabia</p>
+                    </div>
+                </div>
+                <form class="contact-form" netlify>
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name">Your Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Your Email</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" required>
+                        <label for="subject">Subject</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <h3>Thank you for visiting my website</h3>
+                    <p>Made with ❤️ in Tanumah</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/abdullah-alshehri-596658250/" class="social-link"
+                        aria-label="LinkedIn" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/iignlu/" class="social-link" aria-label="GitHub" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://discordapp.com/users/iignlu" class="social-link" aria-label="Discord"
+                        target="_blank">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                    <a href="mailto:abd.alshehri.2004@gmail.com" class="social-link" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Abdullah Alshehri. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
