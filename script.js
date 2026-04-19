@@ -94,7 +94,7 @@ animate();
 
 // Typing Animation
 const typedTextSpan = document.querySelector(".typed-text");
-const textArray = ["Full-Stack Developer", "Web Application Specialist", "Problem Solver", "Creative Coder"];
+const textArray = ["Full-Stack Developer", "AI-Powered Developer", "Web Application Specialist", "Problem Solver"];
 const typingDelay = 100;
 const erasingDelay = 50;
 const newTextDelay = 2000;
