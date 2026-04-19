@@ -94,7 +94,7 @@ animate();
 
 // Typing Animation
 const typedTextSpan = document.querySelector(".typed-text");
-const textArray = ["Front-End Developer", "UI/UX Enthusiast", "Problem Solver", "Creative Coder"];
+const textArray = ["Full-Stack Developer", "Web Application Specialist", "Problem Solver", "Creative Coder"];
 const typingDelay = 100;
 const erasingDelay = 50;
 const newTextDelay = 2000;
@@ -156,7 +156,7 @@ window.addEventListener('scroll', () => {
 });
 
 // 3D Tilt Effect for Cards
-const cards = document.querySelectorAll('.skill-card, .project-card, .contact-card, .certificate-card');
+const cards = document.querySelectorAll('.skill-card, .project-card, .contact-card, .certificate-card, .experience-content');
 
 cards.forEach(card => {
     card.addEventListener('mousemove', (e) => {
