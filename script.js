@@ -1,214 +1,170 @@
-// Particle Background
-const canvas = document.getElementById('particleCanvas');
-const ctx = canvas.getContext('2d');
+// ===================================
+// CODE EDITOR TYPING ANIMATION
+// ===================================
+const codeLines = [
+    '{',
+    '  <span class="code-key">"name"</span>: <span class="code-string">"Abdullah Alshehri"</span>,',
+    '  <span class="code-key">"role"</span>: <span class="code-string">"Full-Stack Developer"</span>,',
+    '  <span class="code-key">"stack"</span>: [<span class="code-string">"React"</span>, <span class="code-string">"Laravel"</span>, <span class="code-string">"Python"</span>],',
+    '  <span class="code-key">"education"</span>: <span class="code-string">"BSc Computer Science"</span>,',
+    '  <span class="code-key">"location"</span>: <span class="code-string">"Saudi Arabia 🇸🇦"</span>,',
+    '  <span class="code-key">"hireable"</span>: <span class="code-bool">true</span>',
+    '}'
+];
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+function typeCode() {
+    const codeEl = document.querySelector('#codeContent code');
+    if (!codeEl) return;
 
-let particlesArray;
+    let lineIndex = 0;
+    let charIndex = 0;
+    let currentDisplay = '';
 
-class Particle {
-    constructor(x, y, directionX, directionY, size, color) {
-        this.x = x;
-        this.y = y;
-        this.directionX = directionX;
-        this.directionY = directionY;
-        this.size = size;
-        this.color = color;
-    }
+    // Plain text versions for character-by-character typing
+    const plainLines = [
+        '{',
+        '  "name": "Abdullah Alshehri",',
+        '  "role": "Full-Stack Developer",',
+        '  "stack": ["React", "Laravel", "Python"],',
+        '  "education": "BSc Computer Science",',
+        '  "location": "Saudi Arabia 🇸🇦",',
+        '  "hireable": true',
+        '}'
+    ];
 
-    draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-        ctx.fillStyle = this.color;
-        ctx.fill();
-    }
-
-    update() {
-        if (this.x > canvas.width || this.x < 0) {
-            this.directionX = -this.directionX;
+    function addChar() {
+        if (lineIndex >= plainLines.length) {
+            // Done typing — show final with cursor
+            codeEl.innerHTML = codeLines.join('\n') + '<span class="code-cursor"></span>';
+            return;
         }
-        if (this.y > canvas.height || this.y < 0) {
-            this.directionY = -this.directionY;
-        }
 
-        this.x += this.directionX;
-        this.y += this.directionY;
-        this.draw();
-    }
-}
+        const currentPlainLine = plainLines[lineIndex];
 
-function init() {
-    particlesArray = [];
-    let numberOfParticles = (canvas.height * canvas.width) / 9000;
+        if (charIndex <= currentPlainLine.length) {
+            // Build display: completed lines (with syntax) + current typing line (plain)
+            const completedHtml = codeLines.slice(0, lineIndex).join('\n');
+            const typingText = currentPlainLine.substring(0, charIndex);
+            const cursor = '<span class="code-cursor"></span>';
 
-    for (let i = 0; i < numberOfParticles; i++) {
-        let size = (Math.random() * 2) + 1;
-        let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
-        let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
-        let directionX = (Math.random() * 0.4) - 0.2;
-        let directionY = (Math.random() * 0.4) - 0.2;
-        let color = '#6C63FF';
-
-        particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
-    }
-}
-
-function connect() {
-    let opacityValue = 1;
-    for (let a = 0; a < particlesArray.length; a++) {
-        for (let b = a; b < particlesArray.length; b++) {
-            let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x))
-                + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
-            if (distance < (canvas.width / 7) * (canvas.height / 7)) {
-                opacityValue = 1 - (distance / 20000);
-                ctx.strokeStyle = 'rgba(108, 99, 255,' + opacityValue + ')';
-                ctx.lineWidth = 1;
-                ctx.beginPath();
-                ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-                ctx.stroke();
+            if (lineIndex > 0) {
+                codeEl.innerHTML = completedHtml + '\n' + typingText + cursor;
+            } else {
+                codeEl.innerHTML = typingText + cursor;
             }
+
+            charIndex++;
+            // Vary speed: faster for spaces/brackets, slower for letters
+            const currentChar = currentPlainLine[charIndex - 1];
+            let delay = 28;
+            if (currentChar === ' ') delay = 15;
+            else if (currentChar === '{' || currentChar === '}' || currentChar === ',') delay = 40;
+
+            setTimeout(addChar, delay);
+        } else {
+            // Line complete — move to next
+            lineIndex++;
+            charIndex = 0;
+            setTimeout(addChar, 80);
         }
     }
+
+    // Start after a short delay
+    setTimeout(addChar, 600);
 }
 
-function animate() {
-    requestAnimationFrame(animate);
-    ctx.clearRect(0, 0, innerWidth, innerHeight);
-
-    for (let i = 0; i < particlesArray.length; i++) {
-        particlesArray[i].update();
-    }
-    connect();
-}
-
-window.addEventListener('resize', function () {
-    canvas.width = innerWidth;
-    canvas.height = innerHeight;
-    init();
-});
-
-init();
-animate();
-
-// Typing Animation
-const typedTextSpan = document.querySelector(".typed-text");
-const textArray = ["Full-Stack Developer", "AI-Powered Developer", "Web Application Specialist", "Problem Solver"];
-const typingDelay = 100;
-const erasingDelay = 50;
-const newTextDelay = 2000;
-let textArrayIndex = 0;
-let charIndex = 0;
-
-function type() {
-    if (charIndex < textArray[textArrayIndex].length) {
-        typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
-        charIndex++;
-        setTimeout(type, typingDelay);
-    } else {
-        setTimeout(erase, newTextDelay);
-    }
-}
-
-function erase() {
-    if (charIndex > 0) {
-        typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
-        charIndex--;
-        setTimeout(erase, erasingDelay);
-    } else {
-        textArrayIndex++;
-        if (textArrayIndex >= textArray.length) textArrayIndex = 0;
-        setTimeout(type, typingDelay + 1100);
-    }
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    if (textArray.length) setTimeout(type, newTextDelay + 250);
-});
-
-// Mobile Menu
-const hamburger = document.getElementById('hamburger');
+// ===================================
+// NAVIGATION
+// ===================================
+const nav = document.getElementById('nav');
+const navToggle = document.getElementById('navToggle');
 const mobileMenu = document.getElementById('mobileMenu');
 const mobileLinks = document.querySelectorAll('.mobile-link');
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
+// Scroll effect
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+    } else {
+        nav.classList.remove('scrolled');
+    }
+});
+
+// Mobile menu toggle
+navToggle.addEventListener('click', () => {
+    navToggle.classList.toggle('active');
     mobileMenu.classList.toggle('active');
+    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
 });
 
 mobileLinks.forEach(link => {
     link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
+        navToggle.classList.remove('active');
         mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
     });
 });
 
-// Navbar Scroll Effect
-const navbar = document.getElementById('navbar');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
-
-// 3D Tilt Effect for Cards
-const cards = document.querySelectorAll('.skill-card, .project-card, .contact-card, .certificate-card, .experience-content');
-
-cards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-
-        const rotateX = ((y - centerY) / centerY) * 10;
-        const rotateY = ((x - centerX) / centerX) * 10;
-
-        card.style.transform = `perspective(1000px) rotateX(${-rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-    });
-
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
-    });
-});
-
-// Smooth Scroll for Navigation
+// ===================================
+// SMOOTH SCROLL
+// ===================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-// Intersection Observer for Fade-up Animations
-const observerOptions = {
-    threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
         }
     });
-}, observerOptions);
-
-const fadeElements = document.querySelectorAll('[data-aos="fade-up"], [data-aos="fade-right"], [data-aos="fade-left"]');
-
-fadeElements.forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-    observer.observe(el);
 });
 
+// ===================================
+// ACTIVE NAV LINK ON SCROLL
+// ===================================
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
 
+function updateActiveLink() {
+    const scrollPos = window.scrollY + 120;
+
+    sections.forEach(section => {
+        const top = section.offsetTop;
+        const height = section.offsetHeight;
+        const id = section.getAttribute('id');
+
+        if (scrollPos >= top && scrollPos < top + height) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + id) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
+}
+
+window.addEventListener('scroll', updateActiveLink);
+
+// ===================================
+// SCROLL REVEAL
+// ===================================
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -40px 0px'
+});
+
+document.querySelectorAll('.reveal').forEach(el => {
+    revealObserver.observe(el);
+});
+
+// ===================================
+// INIT
+// ===================================
+typeCode();
