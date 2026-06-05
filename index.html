@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdullah Alshehri — Developer</title>
+    <meta name="description"
+        content="Full-stack developer specializing in React and Laravel. CS graduate from Jubail Industrial College, Saudi Arabia.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="/planet-ringed_12334918.png">
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">A<span class="logo-accent">.</span></a>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#home" class="mobile-link">Home</a>
+        <a href="#skills" class="mobile-link">Skills</a>
+        <a href="#experience" class="mobile-link">Experience</a>
+        <a href="#projects" class="mobile-link">Projects</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+    </div>
+
+    <main>
+        <!-- Hero -->
+        <section id="home" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="status-badge reveal">
+                        <span class="status-dot"></span>
+                        Open to opportunities
+                    </div>
+                    <h1 class="hero-name reveal">Abdullah<br>Alshehri</h1>
+                    <p class="hero-role reveal">Full-Stack Developer</p>
+                    <p class="hero-bio reveal">
+                        I build web apps with React and Laravel. Recently finished
+                        a co-op at Saudi Arabia Railways building internal tools
+                        and dashboards, and wrapping up my CS degree at
+                        Jubail Industrial College.
+                    </p>
+                    <div class="hero-actions reveal">
+                        <a href="#contact" class="btn btn-primary">
+                            Get in touch
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="CV_Abdullah.pdf" class="btn btn-ghost" download>
+                            <i class="fas fa-download"></i>
+                            Resume
+                        </a>
+                    </div>
+                    <div class="hero-socials reveal">
+                        <a href="https://www.linkedin.com/in/abdullah-alshehri-596658250/" target="_blank"
+                            aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/iignlu/" target="_blank" aria-label="GitHub"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://discordapp.com/users/iignlu" target="_blank" aria-label="Discord"><i
+                                class="fab fa-discord"></i></a>
+                        <a href="mailto:abd.alshehri.2004@gmail.com" aria-label="Email"><i
+                                class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="hero-visual reveal">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <div class="code-dots">
+                                <span class="dot dot-red"></span>
+                                <span class="dot dot-yellow"></span>
+                                <span class="dot dot-green"></span>
+                            </div>
+                            <span class="code-filename">about.json</span>
+                        </div>
+                        <pre class="code-body" id="codeContent"><code></code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills / Tech Stack -->
+        <section id="skills" class="section">
+            <div class="container">
+                <span class="section-label reveal">Skills</span>
+                <h2 class="section-heading reveal">My tech stack</h2>
+                <div class="stack-grid">
+                    <div class="stack-group reveal">
+                        <h3 class="stack-category">Frontend</h3>
+                        <div class="stack-items">
+                            <div class="stack-item"><i class="fab fa-react"></i><span>React</span></div>
+                            <div class="stack-item"><i class="fab fa-js"></i><span>JavaScript</span></div>
+                            <div class="stack-item"><i class="fab fa-html5"></i><span>HTML</span></div>
+                            <div class="stack-item"><i class="fab fa-css3-alt"></i><span>CSS</span></div>
+                        </div>
+                    </div>
+                    <div class="stack-group reveal">
+                        <h3 class="stack-category">Backend</h3>
+                        <div class="stack-items">
+                            <div class="stack-item"><i class="fab fa-laravel"></i><span>Laravel</span></div>
+                            <div class="stack-item"><i class="fab fa-php"></i><span>PHP</span></div>
+                            <div class="stack-item"><i class="fab fa-python"></i><span>Python</span></div>
+                            <div class="stack-item"><i class="fas fa-database"></i><span>SQL</span></div>
+                        </div>
+                    </div>
+                    <div class="stack-group reveal">
+                        <h3 class="stack-category">Tools &amp; Design</h3>
+                        <div class="stack-items">
+                            <div class="stack-item"><i class="fab fa-git-alt"></i><span>Git</span></div>
+                            <div class="stack-item"><i class="fab fa-github"></i><span>GitHub</span></div>
+                            <div class="stack-item"><i class="fab fa-figma"></i><span>Figma</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" class="section">
+            <div class="container">
+                <span class="section-label reveal">Background</span>
+                <h2 class="section-heading reveal">Experience &amp; Education</h2>
+
+                <div class="exp-grid">
+                    <div class="exp-card exp-education reveal">
+                        <div class="exp-type">Education</div>
+                        <h3>BSc Computer Science</h3>
+                        <p class="exp-org">Jubail Industrial College</p>
+                        <div class="exp-meta">
+                            <span><i class="fas fa-calendar-alt"></i> 2021 – 2026</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Jubail, Saudi Arabia</span>
+                        </div>
+                    </div>
+
+                    <div class="exp-card exp-work reveal">
+                        <div class="exp-type">Co-op</div>
+                        <h3>Saudi Arabia Railways (SAR)</h3>
+                        <p class="exp-role">Co-op Trainee</p>
+                        <div class="exp-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Jan 2025 – May 2026</span>
+                        </div>
+                        <ul class="exp-details">
+                            <li>Built a full-stack web app for tracking train trips, wagons, and cargo</li>
+                            <li>Created data entry forms and automated workflows for daily operations</li>
+                            <li>Designed KPI dashboards for monitoring operational performance</li>
+                            <li>Worked with the team to turn business requirements into working features</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Achievements -->
+                <div class="achievements reveal">
+                    <h3 class="achievements-title">Achievements &amp; Certificates</h3>
+                    <div class="achievements-grid">
+                        <div class="achievement-item achievement-highlight">
+                            <div class="achievement-icon trophy">🏆</div>
+                            <div>
+                                <h4>1st Place — Programming Contest (CPC)</h4>
+                                <span>Computer Club, 2024</span>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon"><i class="fas fa-train"></i></div>
+                            <div>
+                                <h4>Certificate of Appreciation — Co-op Training</h4>
+                                <span>Saudi Arabia Railways (SAR)</span>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon"><i class="fab fa-google"></i></div>
+                            <div>
+                                <h4>Foundations: Data, Data, Everywhere</h4>
+                                <span>Google</span>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon"><i class="fab fa-python"></i></div>
+                            <div>
+                                <h4>Python for Data Analysis: Pandas &amp; NumPy</h4>
+                                <span>Coursera</span>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon"><i class="fas fa-cloud"></i></div>
+                            <div>
+                                <h4>SQL for BigQuery &amp; Cloud SQL</h4>
+                                <span>Google Cloud</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="section">
+            <div class="container">
+                <span class="section-label reveal">Work</span>
+                <h2 class="section-heading reveal">Things I've built</h2>
+                <div class="projects-grid">
+                    <div class="project-card project-featured reveal">
+                        <div class="project-top">
+                            <div class="project-tags">
+                                <span class="tag tag-react">React</span>
+                                <span class="tag tag-laravel">Laravel</span>
+                            </div>
+                        </div>
+                        <h3>Train Operations App</h3>
+                        <p>Built during my co-op at SAR. A full-stack app for tracking train trips, wagons, and
+                            cargo — with data entry workflows and KPI dashboards.</p>
+                    </div>
+                    <div class="project-card reveal">
+                        <div class="project-top">
+                            <div class="project-tags">
+                                <span class="tag tag-python">Python</span>
+                                <span class="tag tag-ml">ML</span>
+                            </div>
+                        </div>
+                        <h3>Diabetic Retinopathy Detection</h3>
+                        <p>ML model that analyzes retinal images to flag early signs of diabetic retinopathy. Built
+                            with Python as a capstone project.</p>
+                    </div>
+                    <div class="project-card reveal">
+                        <div class="project-top">
+                            <div class="project-tags">
+                                <span class="tag tag-figma">Figma</span>
+                                <span class="tag tag-design">UI/UX</span>
+                            </div>
+                            <a href="https://www.figma.com/proto/HelFDeirEXoyU8EMXwmTDv/Portfolio?page-id=0%3A1&node-id=1-2&starting-point-node-id=1%3A2&scaling=scale-down&content-scaling=fixed&t=w2T3VpTPYyWc4i8H-1"
+                                target="_blank" class="project-arrow" aria-label="View project"><i
+                                    class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <h3>Portfolio UI Design</h3>
+                        <p>The Figma prototype I designed before building this site. My first end-to-end
+                            design-to-code project.</p>
+                    </div>
+                    <div class="project-card reveal">
+                        <div class="project-top">
+                            <div class="project-tags">
+                                <span class="tag tag-figma">Figma</span>
+                                <span class="tag tag-iot">IoT</span>
+                            </div>
+                            <a href="https://www.figma.com/proto/iD14fiTcvIa8p8SMMcsFm0/Plant-Watering?node-id=1-1810&p=f&t=OsQGeEC3eX3hdjmR-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=6%3A28"
+                                target="_blank" class="project-arrow" aria-label="View project"><i
+                                    class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <h3>Plant Watering System</h3>
+                        <p>Mobile UI for an IoT plant monitoring system. Tracks soil moisture and sends watering
+                            alerts. Built for my HCI course.</p>
+                    </div>
+                    <div class="project-card reveal">
+                        <div class="project-top">
+                            <div class="project-tags">
+                                <span class="tag tag-design">UI/UX</span>
+                                <span class="tag tag-comp">Competition</span>
+                            </div>
+                            <a href="https://www.figma.com/proto/PzD6Wcc2sbsnxttANUyABM/CSIT-Project?node-id=33-382&p=f&t=eLSFOh6CJA3QyLi9-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A2120"
+                                target="_blank" class="project-arrow" aria-label="View project"><i
+                                    class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <h3>Wikipedia Redesign</h3>
+                        <p>Entered a UI/UX design competition to modernize Wikipedia's interface. Focused on
+                            readability and navigation.</p>
+                    </div>
+                    <div class="project-card reveal">
+                        <div class="project-top">
+                            <div class="project-tags">
+                                <span class="tag tag-web">HTML</span>
+                                <span class="tag tag-web">CSS</span>
+                            </div>
+                            <a href="https://alshehri-portfolio.netlify.app/" target="_blank" class="project-arrow"
+                                aria-label="View project"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <h3>Portfolio v1</h3>
+                        <p>My first portfolio — built with vanilla HTML and CSS. Where it all started.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section">
+            <div class="container">
+                <span class="section-label reveal">Contact</span>
+                <h2 class="section-heading reveal">Let's talk</h2>
+                <p class="section-subtitle reveal">Have a project in mind or just want to say hi? Reach out.</p>
+                <div class="contact-grid">
+                    <div class="contact-details reveal">
+                        <a href="mailto:abd.alshehri.2004@gmail.com" class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <span>abd.alshehri.2004@gmail.com</span>
+                            </div>
+                        </a>
+                        <a href="tel:+966536980276" class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <span>+966 53 698 0276</span>
+                            </div>
+                        </a>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <span>Jubail, Saudi Arabia</span>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="contact-form reveal" netlify>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your name" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..."
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            Send message
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-name">Abdullah Alshehri</p>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/abdullah-alshehri-596658250/" target="_blank"
+                    aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/iignlu/" target="_blank" aria-label="GitHub"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://discordapp.com/users/iignlu" target="_blank" aria-label="Discord"><i
+                        class="fab fa-discord"></i></a>
+                <a href="mailto:abd.alshehri.2004@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="footer-copy">&copy; 2026</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
