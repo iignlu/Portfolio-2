@@ -5,10 +5,13 @@ Vanilla HTML, CSS and JavaScript — no framework, no build step, no dependencie
 
 ## Approach
 
-Calm dark theme, generous spacing, and restrained motion. The whole page is four
-network requests and roughly 25 KB of CSS + JS, so it paints immediately on a
-phone connection.
+Deep dark surface, gradient-lit cards, generous spacing, restrained motion.
+About 26 KB over the wire, so it paints immediately on a phone connection.
 
+- **Pointer-lit cards** — each card carries a soft radial highlight and a gradient
+  hairline border that track the cursor, drawn with a `mask-composite` ring so the
+  gradient sits on the border box only. The listener is per-card, so just the
+  hovered card ever does layout work.
 - **Bilingual EN ⇄ AR** with automatic RTL. Layout uses CSS logical properties
   throughout, so the mirror is real rather than a set of overrides.
 - **Motion is one effect**: a short fade-and-rise as sections enter the viewport.
@@ -16,13 +19,14 @@ phone connection.
   start at `opacity: 0`, so a callback that never lands would leave the page blank.
 - **Accessible**: keyboard-reachable throughout, visible focus rings, labelled form
   fields, and `prefers-reduced-motion` disables every transition.
-- **Degrades cleanly**: a `no-js` fallback keeps all content visible if JavaScript
-  fails to load.
+- **Degrades cleanly**: a `no-js` fallback keeps content visible without JavaScript,
+  and an `@supports` guard restores solid colour if `background-clip: text` is
+  unavailable, so gradient headings can never render invisible.
 
 ## Tech
 
 - HTML5, CSS3 (logical properties for RTL), vanilla JS
-- Google Fonts: Inter Tight, JetBrains Mono, IBM Plex Sans Arabic
+- Google Fonts: Inter Tight, Instrument Serif, JetBrains Mono, IBM Plex Sans Arabic
 - Inline SVG icon sprite — no icon-font dependency
 - Deployed on Netlify, auto-deploying from `main`
 

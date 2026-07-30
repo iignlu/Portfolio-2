@@ -7,7 +7,7 @@
     <title>Abdullah Alshehri — Full-Stack Developer</title>
     <meta name="description"
         content="Full-stack developer specializing in React and Laravel. CS graduate from Jubail Industrial College, Saudi Arabia. Built train operations tooling at Saudi Arabia Railways.">
-    <meta name="theme-color" content="#101218">
+    <meta name="theme-color" content="#0A0C11">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Abdullah Alshehri — Full-Stack Developer">
@@ -20,14 +20,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- icons -->
     <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
         <symbol id="i-linkedin" viewBox="0 0 24 24">
             <path fill="currentColor"
@@ -67,16 +66,20 @@
             <path fill="none" stroke="currentColor" stroke-width="1.6"
                 d="M3.5 12h17M12 3.5c2.2 2.3 3.4 5.3 3.4 8.5S14.2 18.2 12 20.5c-2.2-2.3-3.4-5.3-3.4-8.5S9.8 5.8 12 3.5Z" />
         </symbol>
+        <symbol id="i-spark" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M12 2.5 13.9 9 20.5 12 13.9 15 12 21.5 10.1 15 3.5 12 10.1 9 12 2.5Z" />
+        </symbol>
     </svg>
 
-    <div class="ambient" aria-hidden="true"></div>
+    <div class="bg-aurora" aria-hidden="true"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
 
     <!-- ============ NAV ============ -->
     <header class="nav" id="nav">
         <div class="nav-inner">
             <a href="#home" class="brand" aria-label="Abdullah Alshehri — home">
-                <span class="brand-dot"></span>
-                <span>Abdullah</span>
+                <span class="brand-mark"><span></span></span>
+                <span class="brand-name">Abdullah</span>
             </a>
 
             <nav class="nav-links" aria-label="Primary">
@@ -111,15 +114,14 @@
 
         <!-- ============ HERO ============ -->
         <section id="home" class="hero">
-            <div class="wrap">
+            <span class="hero-glow" aria-hidden="true"></span>
+            <div class="wrap hero-in">
                 <span class="badge r">
                     <span class="dot"></span>
                     <span data-i18n="hero.status">Available for work</span>
                 </span>
 
-                <h1 class="hero-title r" data-i18n-html="hero.title">
-                    Abdullah Alshehri
-                </h1>
+                <h1 class="hero-title r" data-i18n="hero.title">Abdullah Alshehri</h1>
 
                 <p class="hero-role r" data-i18n="hero.role">Full-Stack Developer</p>
 
@@ -142,23 +144,22 @@
                             <use href="#i-download" />
                         </svg>
                     </a>
-                </div>
-
-                <div class="socials r">
-                    <a href="https://www.linkedin.com/in/abdullah-alshehri-596658250/" target="_blank" rel="noopener"
-                        aria-label="LinkedIn"><svg>
-                            <use href="#i-linkedin" />
-                        </svg></a>
-                    <a href="https://github.com/iignlu/" target="_blank" rel="noopener" aria-label="GitHub"><svg>
-                            <use href="#i-github" />
-                        </svg></a>
-                    <a href="https://discordapp.com/users/iignlu" target="_blank" rel="noopener"
-                        aria-label="Discord"><svg>
-                            <use href="#i-discord" />
-                        </svg></a>
-                    <a href="mailto:abd.alshehri.2004@gmail.com" aria-label="Email"><svg>
-                            <use href="#i-mail" />
-                        </svg></a>
+                    <div class="socials">
+                        <a href="https://www.linkedin.com/in/abdullah-alshehri-596658250/" target="_blank"
+                            rel="noopener" aria-label="LinkedIn"><svg>
+                                <use href="#i-linkedin" />
+                            </svg></a>
+                        <a href="https://github.com/iignlu/" target="_blank" rel="noopener" aria-label="GitHub"><svg>
+                                <use href="#i-github" />
+                            </svg></a>
+                        <a href="https://discordapp.com/users/iignlu" target="_blank" rel="noopener"
+                            aria-label="Discord"><svg>
+                                <use href="#i-discord" />
+                            </svg></a>
+                        <a href="mailto:abd.alshehri.2004@gmail.com" aria-label="Email"><svg>
+                                <use href="#i-mail" />
+                            </svg></a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -166,38 +167,51 @@
         <!-- ============ ABOUT ============ -->
         <section id="about" class="sec">
             <div class="wrap">
-                <span class="label r" data-i18n="about.label">About</span>
+                <span class="label r"><i></i><span data-i18n="about.label">About</span></span>
 
-                <div class="about">
-                    <div class="about-text">
-                        <p class="lead r" data-i18n="about.lead">
-                            I turn business requirements into software people actually use.
-                        </p>
-                        <p class="r" data-i18n="about.p1">
-                            Most of my work sits where the frontend meets real operational data — forms people fill in
-                            every day, workflows that have to be right, and dashboards someone actually makes decisions
-                            from.
-                        </p>
-                        <p class="r" data-i18n="about.p2">
-                            React and Laravel are my daily tools; Python and SQL are where I go when the problem is
-                            data.
-                        </p>
-                    </div>
+                <p class="lead r" data-i18n-html="about.lead">
+                    I turn business requirements into <em>software people actually use.</em>
+                </p>
 
-                    <div class="skills">
-                        <div class="skill r">
-                            <span class="skill-key" data-i18n="about.front">Frontend</span>
-                            <span class="skill-val">React · JavaScript · HTML · CSS</span>
+                <div class="bento">
+                    <article class="card card-wide r" data-glow>
+                        <div class="card-body">
+                            <p data-i18n="about.p1">Most of my work sits where the frontend meets real operational
+                                data — forms people fill in every day, workflows that have to be right, and dashboards
+                                someone actually makes decisions from.</p>
+                            <p data-i18n="about.p2">React and Laravel are my daily tools; Python and SQL are where I go
+                                when the problem is data.</p>
                         </div>
-                        <div class="skill r">
-                            <span class="skill-key" data-i18n="about.back">Backend</span>
-                            <span class="skill-val">Laravel · PHP · Python · SQL</span>
+                    </article>
+
+                    <article class="card card-loc r" data-glow>
+                        <div class="card-body">
+                            <span class="loc-ico"><svg>
+                                    <use href="#i-pin" />
+                                </svg></span>
+                            <span class="loc-name" data-i18n="path.loc">Abha, Saudi Arabia</span>
+                            <span class="loc-time"><span class="dot"></span><span id="clock">—</span></span>
                         </div>
-                        <div class="skill r">
-                            <span class="skill-key" data-i18n="about.tools">Tools</span>
-                            <span class="skill-val">Git · GitHub · Figma</span>
+                    </article>
+
+                    <article class="card r" data-glow>
+                        <div class="card-body">
+                            <span class="k" data-i18n="about.front">Frontend</span>
+                            <span class="v">React · JavaScript · HTML · CSS</span>
                         </div>
-                    </div>
+                    </article>
+                    <article class="card r" data-glow>
+                        <div class="card-body">
+                            <span class="k" data-i18n="about.back">Backend</span>
+                            <span class="v">Laravel · PHP · Python · SQL</span>
+                        </div>
+                    </article>
+                    <article class="card r" data-glow>
+                        <div class="card-body">
+                            <span class="k" data-i18n="about.tools">Tools</span>
+                            <span class="v">Git · GitHub · Figma</span>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -205,78 +219,87 @@
         <!-- ============ WORK ============ -->
         <section id="work" class="sec">
             <div class="wrap">
-                <span class="label r" data-i18n="work.label">Selected work</span>
+                <span class="label r"><i></i><span data-i18n="work.label">Selected work</span></span>
                 <h2 class="h2 r" data-i18n="work.title">Things I've built</h2>
 
                 <div class="works">
-                    <a class="work r" href="#contact">
-                        <div class="work-head">
+                    <a class="card work r" href="#contact" data-glow>
+                        <div class="card-body">
+                            <span class="work-n">01</span>
+                            <span class="star"><svg>
+                                    <use href="#i-spark" />
+                                </svg><span data-i18n="work.featured">Featured</span></span>
                             <h3 data-i18n="work.p1.name">Train Operations App</h3>
-                            <span class="star" data-i18n="work.featured">Featured</span>
+                            <p data-i18n="work.p1.desc">Full-stack app for tracking train trips, wagons and cargo — data
+                                entry workflows plus KPI dashboards. Built during my co-op at SAR.</p>
+                            <span class="chips"><span>React</span><span>Laravel</span></span>
                         </div>
-                        <p data-i18n="work.p1.desc">Full-stack app for tracking train trips, wagons and cargo — data
-                            entry workflows plus KPI dashboards. Built during my co-op at SAR.</p>
-                        <div class="chips"><span>React</span><span>Laravel</span></div>
                     </a>
 
-                    <a class="work r" href="#contact">
-                        <div class="work-head">
+                    <a class="card work r" href="#contact" data-glow>
+                        <div class="card-body">
+                            <span class="work-n">02</span>
                             <h3 data-i18n="work.p2.name">Diabetic Retinopathy Detection</h3>
+                            <p data-i18n="work.p2.desc">A machine-learning model that analyses retinal images to flag
+                                early signs of diabetic retinopathy. My capstone project.</p>
+                            <span class="chips"><span>Python</span><span>ML</span></span>
                         </div>
-                        <p data-i18n="work.p2.desc">A machine-learning model that analyses retinal images to flag early
-                            signs of diabetic retinopathy. My capstone project.</p>
-                        <div class="chips"><span>Python</span><span>ML</span></div>
                     </a>
 
-                    <a class="work r" target="_blank" rel="noopener"
+                    <a class="card work r" target="_blank" rel="noopener" data-glow
                         href="https://www.figma.com/proto/HelFDeirEXoyU8EMXwmTDv/Portfolio?page-id=0%3A1&node-id=1-2&starting-point-node-id=1%3A2&scaling=scale-down&content-scaling=fixed&t=w2T3VpTPYyWc4i8H-1">
-                        <div class="work-head">
+                        <div class="card-body">
+                            <span class="work-n">03</span>
+                            <svg class="ext">
+                                <use href="#i-arrow" />
+                            </svg>
                             <h3 data-i18n="work.p3.name">Portfolio UI Design</h3>
-                            <svg class="ext">
-                                <use href="#i-arrow" />
-                            </svg>
+                            <p data-i18n="work.p3.desc">The Figma prototype I designed before building this site — my
+                                first end-to-end design-to-code project.</p>
+                            <span class="chips"><span>Figma</span><span>UI/UX</span></span>
                         </div>
-                        <p data-i18n="work.p3.desc">The Figma prototype I designed before building this site — my first
-                            end-to-end design-to-code project.</p>
-                        <div class="chips"><span>Figma</span><span>UI/UX</span></div>
                     </a>
 
-                    <a class="work r" target="_blank" rel="noopener"
+                    <a class="card work r" target="_blank" rel="noopener" data-glow
                         href="https://www.figma.com/proto/iD14fiTcvIa8p8SMMcsFm0/Plant-Watering?node-id=1-1810&p=f&t=OsQGeEC3eX3hdjmR-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=6%3A28">
-                        <div class="work-head">
+                        <div class="card-body">
+                            <span class="work-n">04</span>
+                            <svg class="ext">
+                                <use href="#i-arrow" />
+                            </svg>
                             <h3 data-i18n="work.p4.name">Plant Watering System</h3>
-                            <svg class="ext">
-                                <use href="#i-arrow" />
-                            </svg>
+                            <p data-i18n="work.p4.desc">Mobile UI for an IoT plant monitor — soil-moisture tracking and
+                                watering alerts. Built for my HCI course.</p>
+                            <span class="chips"><span>Figma</span><span>IoT</span></span>
                         </div>
-                        <p data-i18n="work.p4.desc">Mobile UI for an IoT plant monitor — soil-moisture tracking and
-                            watering alerts. Built for my HCI course.</p>
-                        <div class="chips"><span>Figma</span><span>IoT</span></div>
                     </a>
 
-                    <a class="work r" target="_blank" rel="noopener"
+                    <a class="card work r" target="_blank" rel="noopener" data-glow
                         href="https://www.figma.com/proto/PzD6Wcc2sbsnxttANUyABM/CSIT-Project?node-id=33-382&p=f&t=eLSFOh6CJA3QyLi9-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A2120">
-                        <div class="work-head">
-                            <h3 data-i18n="work.p5.name">Wikipedia Redesign</h3>
+                        <div class="card-body">
+                            <span class="work-n">05</span>
                             <svg class="ext">
                                 <use href="#i-arrow" />
                             </svg>
+                            <h3 data-i18n="work.p5.name">Wikipedia Redesign</h3>
+                            <p data-i18n="work.p5.desc">A UI/UX competition entry modernising Wikipedia's interface,
+                                focused on readability and navigation.</p>
+                            <span class="chips"><span>UI/UX</span><span data-i18n="work.comp">Competition</span></span>
                         </div>
-                        <p data-i18n="work.p5.desc">A UI/UX competition entry modernising Wikipedia's interface, focused
-                            on readability and navigation.</p>
-                        <div class="chips"><span>UI/UX</span><span data-i18n="work.comp">Competition</span></div>
                     </a>
 
-                    <a class="work r" target="_blank" rel="noopener" href="https://alshehri-portfolio.netlify.app/">
-                        <div class="work-head">
-                            <h3 data-i18n="work.p6.name">Portfolio v1</h3>
+                    <a class="card work r" target="_blank" rel="noopener" data-glow
+                        href="https://alshehri-portfolio.netlify.app/">
+                        <div class="card-body">
+                            <span class="work-n">06</span>
                             <svg class="ext">
                                 <use href="#i-arrow" />
                             </svg>
+                            <h3 data-i18n="work.p6.name">Portfolio v1</h3>
+                            <p data-i18n="work.p6.desc">My first portfolio, built with vanilla HTML and CSS. Where it
+                                all started.</p>
+                            <span class="chips"><span>HTML</span><span>CSS</span></span>
                         </div>
-                        <p data-i18n="work.p6.desc">My first portfolio, built with vanilla HTML and CSS. Where it all
-                            started.</p>
-                        <div class="chips"><span>HTML</span><span>CSS</span></div>
                     </a>
                 </div>
             </div>
@@ -285,11 +308,12 @@
         <!-- ============ EXPERIENCE ============ -->
         <section id="path" class="sec">
             <div class="wrap">
-                <span class="label r" data-i18n="path.label">Experience</span>
+                <span class="label r"><i></i><span data-i18n="path.label">Experience</span></span>
                 <h2 class="h2 r" data-i18n="path.title">Where I've been</h2>
 
                 <div class="tl">
                     <div class="tl-row r">
+                        <div class="tl-rail" aria-hidden="true"><span></span></div>
                         <div class="tl-when" data-i18n="path.d1">Jan 2026 — May 2026</div>
                         <div class="tl-main">
                             <h3 data-i18n="path.org1">Saudi Arabia Railways (SAR)</h3>
@@ -308,6 +332,7 @@
                     </div>
 
                     <div class="tl-row r">
+                        <div class="tl-rail" aria-hidden="true"><span></span></div>
                         <div class="tl-when">2021 — 2026</div>
                         <div class="tl-main">
                             <h3 data-i18n="path.o2">BSc Computer Science</h3>
@@ -318,45 +343,59 @@
 
                 <h3 class="h3 r" data-i18n="path.awards">Achievements &amp; certificates</h3>
                 <div class="awards">
-                    <div class="award award-lead r">
-                        <b data-i18n="path.a1">1st Place — Programming Contest (CPC)</b>
-                        <span data-i18n="path.a1s">Computer Club · 2024</span>
+                    <div class="card award award-lead r" data-glow>
+                        <div class="card-body">
+                            <span class="award-ico"><svg>
+                                    <use href="#i-spark" />
+                                </svg></span>
+                            <b data-i18n="path.a1">1st Place — Programming Contest (CPC)</b>
+                            <span data-i18n="path.a1s">Computer Club · 2024</span>
+                        </div>
                     </div>
-                    <div class="award r">
-                        <b data-i18n="path.a2">Certificate of Appreciation — Co-op Training</b>
-                        <span data-i18n="path.org1">Saudi Arabia Railways (SAR)</span>
+                    <div class="card award r" data-glow>
+                        <div class="card-body">
+                            <b data-i18n="path.a2">Certificate of Appreciation — Co-op Training</b>
+                            <span data-i18n="path.org1">Saudi Arabia Railways (SAR)</span>
+                        </div>
                     </div>
-                    <div class="award r">
-                        <b>Foundations: Data, Data, Everywhere</b>
-                        <span>Google</span>
+                    <div class="card award r" data-glow>
+                        <div class="card-body">
+                            <b>Foundations: Data, Data, Everywhere</b>
+                            <span>Google</span>
+                        </div>
                     </div>
-                    <div class="award r">
-                        <b>Python for Data Analysis: Pandas &amp; NumPy</b>
-                        <span>Coursera</span>
+                    <div class="card award r" data-glow>
+                        <div class="card-body">
+                            <b>Python for Data Analysis: Pandas &amp; NumPy</b>
+                            <span>Coursera</span>
+                        </div>
                     </div>
-                    <div class="award r">
-                        <b>SQL for BigQuery &amp; Cloud SQL</b>
-                        <span>Google Cloud</span>
+                    <div class="card award r" data-glow>
+                        <div class="card-body">
+                            <b>SQL for BigQuery &amp; Cloud SQL</b>
+                            <span>Google Cloud</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- ============ CONTACT ============ -->
-        <section id="contact" class="sec">
+        <section id="contact" class="sec sec-contact">
             <div class="wrap">
-                <span class="label r" data-i18n="contact.label">Contact</span>
+                <span class="label r"><i></i><span data-i18n="contact.label">Contact</span></span>
                 <h2 class="h2 r" data-i18n="contact.title">Let's talk</h2>
-                <p class="lead r" data-i18n="contact.sub">Have a role, a project, or just want to say hi?</p>
+                <p class="lead lead-sm r" data-i18n="contact.sub">Have a role, a project, or just want to say hi?</p>
+
+                <a href="mailto:abd.alshehri.2004@gmail.com" class="mail r">
+                    <span>abd.alshehri.2004@gmail.com</span>
+                    <svg>
+                        <use href="#i-arrow" />
+                    </svg>
+                </a>
 
                 <div class="contact">
                     <div class="contact-side">
-                        <a href="mailto:abd.alshehri.2004@gmail.com" class="cline r">
-                            <svg>
-                                <use href="#i-mail" />
-                            </svg>
-                            <span>abd.alshehri.2004@gmail.com</span>
-                        </a>
                         <a href="tel:+966536980276" class="cline r">
                             <svg>
                                 <use href="#i-phone" />
@@ -369,27 +408,37 @@
                             </svg>
                             <span data-i18n="path.loc">Abha, Saudi Arabia</span>
                         </div>
+                        <a href="https://www.linkedin.com/in/abdullah-alshehri-596658250/" target="_blank"
+                            rel="noopener" class="cline r">
+                            <svg>
+                                <use href="#i-linkedin" />
+                            </svg>
+                            <span>LinkedIn</span>
+                        </a>
                     </div>
 
-                    <form class="form r" name="contact" method="POST" data-netlify="true"
-                        netlify-honeypot="bot-field">
-                        <input type="hidden" name="form-name" value="contact">
-                        <p class="hp"><label>Don't fill this out: <input name="bot-field"></label></p>
-                        <div class="frow">
-                            <div class="field">
-                                <label for="name" data-i18n="form.name">Name</label>
-                                <input type="text" id="name" name="name" required>
+                    <form class="card form r" name="contact" method="POST" data-netlify="true"
+                        netlify-honeypot="bot-field" data-glow>
+                        <div class="card-body">
+                            <input type="hidden" name="form-name" value="contact">
+                            <p class="hp"><label>Don't fill this out: <input name="bot-field"></label></p>
+                            <div class="frow">
+                                <div class="field">
+                                    <label for="name" data-i18n="form.name">Name</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="field">
+                                    <label for="email" data-i18n="form.email">Email</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
                             </div>
                             <div class="field">
-                                <label for="email" data-i18n="form.email">Email</label>
-                                <input type="email" id="email" name="email" required>
+                                <label for="message" data-i18n="form.message">Message</label>
+                                <textarea id="message" name="message" rows="4" required></textarea>
                             </div>
+                            <button type="submit" class="btn btn-fill btn-full" data-i18n="form.send">Send
+                                message</button>
                         </div>
-                        <div class="field">
-                            <label for="message" data-i18n="form.message">Message</label>
-                            <textarea id="message" name="message" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-fill btn-full" data-i18n="form.send">Send message</button>
                     </form>
                 </div>
             </div>
@@ -397,13 +446,16 @@
     </main>
 
     <footer class="foot">
-        <div class="wrap foot-in">
-            <span>© 2026 Abdullah Alshehri</span>
-            <div class="foot-links">
-                <a href="https://www.linkedin.com/in/abdullah-alshehri-596658250/" target="_blank"
-                    rel="noopener">LinkedIn</a>
-                <a href="https://github.com/iignlu/" target="_blank" rel="noopener">GitHub</a>
-                <a href="https://discordapp.com/users/iignlu" target="_blank" rel="noopener">Discord</a>
+        <div class="wrap">
+            <div class="foot-name" aria-hidden="true">Abdullah Alshehri</div>
+            <div class="foot-in">
+                <span>© 2026 Abdullah Alshehri</span>
+                <div class="foot-links">
+                    <a href="https://www.linkedin.com/in/abdullah-alshehri-596658250/" target="_blank"
+                        rel="noopener">LinkedIn</a>
+                    <a href="https://github.com/iignlu/" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://discordapp.com/users/iignlu" target="_blank" rel="noopener">Discord</a>
+                </div>
             </div>
         </div>
     </footer>

@@ -23,7 +23,7 @@
             'hero.cta2': 'Resume',
 
             'about.label': 'About',
-            'about.lead': 'I turn business requirements into software people actually use.',
+            'about.lead': 'I turn business requirements into <em>software people actually use.</em>',
             'about.p1': 'Most of my work sits where the frontend meets real operational data — forms people fill in every day, workflows that have to be right, and dashboards someone actually makes decisions from.',
             'about.p2': 'React and Laravel are my daily tools; Python and SQL are where I go when the problem is data.',
             'about.front': 'Frontend', 'about.back': 'Backend', 'about.tools': 'Tools',
@@ -81,7 +81,7 @@
             'hero.cta2': 'السيرة الذاتية',
 
             'about.label': 'نبذة',
-            'about.lead': 'أحوّل متطلبات العمل إلى برمجيات يستخدمها الناس فعلًا.',
+            'about.lead': 'أحوّل متطلبات العمل إلى <em>برمجيات يستخدمها الناس فعلًا.</em>',
             'about.p1': 'معظم عملي يقع عند التقاء الواجهة الأمامية ببيانات التشغيل الحقيقية — نماذج يعبّئها الموظفون كل يوم، وإجراءات لا تحتمل الخطأ، ولوحات مؤشرات يُبنى عليها قرار فعلي.',
             'about.p2': 'React و Laravel أدواتي اليومية، وأتّجه إلى Python و SQL حين تكون المشكلة في البيانات.',
             'about.front': 'الواجهة', 'about.back': 'الخلفية', 'about.tools': 'الأدوات',
@@ -183,6 +183,32 @@
         }
     }
 
+    /* ---------------- pointer-lit cards ----------------
+       Listener is per-card, so only the hovered card ever does work. */
+    function initGlow() {
+        if (reduce || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+        document.querySelectorAll('[data-glow]').forEach(function (card) {
+            card.addEventListener('pointermove', function (e) {
+                var b = card.getBoundingClientRect();
+                card.style.setProperty('--mx', (e.clientX - b.left).toFixed(1) + 'px');
+                card.style.setProperty('--my', (e.clientY - b.top).toFixed(1) + 'px');
+            });
+        });
+    }
+
+    /* ---------------- local clock ---------------- */
+    function tickClock() {
+        var el = document.getElementById('clock');
+        if (!el) return;
+        try {
+            el.textContent = new Intl.DateTimeFormat(lang === 'ar' ? 'ar-SA' : 'en-GB', {
+                hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Riyadh'
+            }).format(new Date());
+        } catch (e) {
+            el.textContent = 'GMT+3';
+        }
+    }
+
     /* ---------------- nav ---------------- */
     var nav = document.getElementById('nav');
     var navLinks = document.querySelectorAll('.nav-link');
@@ -220,9 +246,13 @@
     function boot() {
         applyLang(lang);
         initReveal();
+        initGlow();
+        tickClock();
+        setInterval(tickClock, 30000);
 
         document.getElementById('langToggle').addEventListener('click', function () {
             applyLang(lang === 'en' ? 'ar' : 'en');
+            tickClock();
             checkReveal();
         });
 
