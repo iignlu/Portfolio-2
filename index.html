@@ -1,209 +1,365 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr" class="no-js">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdullah Alshehri — Developer</title>
+    <title>Abdullah Alshehri — Full-Stack Developer</title>
     <meta name="description"
-        content="Full-stack developer specializing in React and Laravel. CS graduate from Jubail Industrial College, Saudi Arabia.">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-        rel="stylesheet">
+        content="Full-stack developer specializing in React and Laravel. CS graduate from Jubail Industrial College, Saudi Arabia. Built train operations tooling at Saudi Arabia Railways.">
+    <meta name="theme-color" content="#06060A">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Abdullah Alshehri — Full-Stack Developer">
+    <meta property="og:description"
+        content="React & Laravel. Train operations tooling at Saudi Arabia Railways. BSc Computer Science, Jubail Industrial College.">
+    <meta property="og:url" content="https://aalshehri.site">
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="icon" type="image/png" href="/planet-ringed_12334918.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@200..700&family=JetBrains+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="nav" id="nav">
-        <div class="nav-inner">
-            <a href="#" class="nav-logo">A<span class="logo-accent">.</span></a>
-            <div class="nav-links">
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#home" class="mobile-link">Home</a>
-        <a href="#skills" class="mobile-link">Skills</a>
-        <a href="#experience" class="mobile-link">Experience</a>
-        <a href="#projects" class="mobile-link">Projects</a>
-        <a href="#contact" class="mobile-link">Contact</a>
+    <!-- ============ ICON SPRITE ============ -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="i-linkedin" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM2.9 21.5h4.2V9.4H2.9v12.1Zm7.1 0h4.2v-6.4c0-1.7.32-3.35 2.43-3.35 2.08 0 2.1 1.95 2.1 3.46v6.29h4.2v-7.13c0-3.65-.79-6.45-5.05-6.45-2.05 0-3.42 1.12-3.98 2.19h-.06V9.4H10v12.1Z" />
+        </symbol>
+        <symbol id="i-github" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="M12 1.8A10.2 10.2 0 0 0 8.78 21.7c.51.1.7-.22.7-.49l-.01-1.9c-2.84.62-3.44-1.2-3.44-1.2-.47-1.19-1.14-1.5-1.14-1.5-.93-.64.07-.62.07-.62 1.03.07 1.57 1.06 1.57 1.06.91 1.57 2.4 1.12 2.99.86.09-.66.36-1.12.65-1.38-2.27-.26-4.65-1.13-4.65-5.05 0-1.11.4-2.03 1.05-2.74-.11-.26-.46-1.3.1-2.71 0 0 .86-.28 2.81 1.05a9.7 9.7 0 0 1 5.12 0c1.95-1.33 2.8-1.05 2.8-1.05.57 1.41.21 2.45.11 2.71.66.71 1.05 1.63 1.05 2.74 0 3.93-2.39 4.79-4.66 5.04.37.32.69.94.69 1.9l-.01 2.81c0 .27.19.6.71.49A10.2 10.2 0 0 0 12 1.8Z" />
+        </symbol>
+        <symbol id="i-discord" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="M19.3 5.34A16.9 16.9 0 0 0 15.1 4l-.2.4c1.4.33 2.62.9 3.75 1.7a13.1 13.1 0 0 0-13.3 0A12.3 12.3 0 0 1 9.1 4.4L8.9 4a16.6 16.6 0 0 0-4.2 1.34C2.03 9.3 1.3 13.15 1.66 16.95a16.9 16.9 0 0 0 5.14 2.6l1.1-1.83c-.62-.23-1.2-.5-1.75-.84l.43-.33a12.1 12.1 0 0 0 10.84 0l.43.33c-.55.34-1.14.62-1.76.85l1.1 1.82a16.8 16.8 0 0 0 5.15-2.6c.42-4.4-.74-8.22-3.04-11.6ZM8.53 14.65c-1 0-1.83-.92-1.83-2.06 0-1.13.8-2.06 1.83-2.06s1.85.93 1.83 2.06c0 1.14-.81 2.06-1.83 2.06Zm6.94 0c-1 0-1.83-.92-1.83-2.06 0-1.13.8-2.06 1.83-2.06s1.84.93 1.82 2.06c0 1.14-.8 2.06-1.82 2.06Z" />
+        </symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24">
+            <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
+                d="M3 6.5h18v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11Zm0 .5 9 6.5L21 7" />
+        </symbol>
+        <symbol id="i-phone" viewBox="0 0 24 24">
+            <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
+                d="M5 3.5h3.2l1.6 4-2 1.4a12.5 12.5 0 0 0 5.8 5.8l1.4-2 4 1.6V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.1 1.5 1.5 0 0 1 5 3.5Z" />
+        </symbol>
+        <symbol id="i-pin" viewBox="0 0 24 24">
+            <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
+                d="M12 21s7-6.03 7-11a7 7 0 1 0-14 0c0 4.97 7 11 7 11Z" />
+            <circle cx="12" cy="10" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6" />
+        </symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24">
+            <path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"
+                d="M7 17 17 7M8.5 7H17v8.5" />
+        </symbol>
+        <symbol id="i-download" viewBox="0 0 24 24">
+            <path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"
+                d="M12 3.5v11m0 0 4-4m-4 4-4-4M4 19h16" />
+        </symbol>
+        <symbol id="i-send" viewBox="0 0 24 24">
+            <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
+                d="M21 3 10.5 13.5M21 3l-6.75 18-3.75-7.5L3 9.75 21 3Z" />
+        </symbol>
+        <symbol id="i-cal" viewBox="0 0 24 24">
+            <rect x="3.5" y="5" width="17" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.6" />
+            <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                d="M3.5 9.5h17M8 3.5v3M16 3.5v3" />
+        </symbol>
+        <symbol id="i-trophy" viewBox="0 0 24 24">
+            <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
+                d="M7 4h10v5a5 5 0 0 1-10 0V4Zm10 1.5h3V8a3 3 0 0 1-3 3M7 5.5H4V8a3 3 0 0 0 3 3M12 14v3.5M8.5 20.5h7" />
+        </symbol>
+        <symbol id="i-train" viewBox="0 0 24 24">
+            <rect x="5" y="3.5" width="14" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="1.6" />
+            <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                d="M5 9.5h14M8.5 19l-2 2.5M15.5 19l2 2.5M7 15.5h10" />
+            <circle cx="8.6" cy="12.6" r="1" fill="currentColor" />
+            <circle cx="15.4" cy="12.6" r="1" fill="currentColor" />
+        </symbol>
+        <symbol id="i-chart" viewBox="0 0 24 24">
+            <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
+                d="M4 20h16M7 20V11m5 9V4.5m5 15.5V14" />
+        </symbol>
+        <symbol id="i-code" viewBox="0 0 24 24">
+            <path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"
+                d="m8.5 8-5 4 5 4M15.5 8l5 4-5 4" />
+        </symbol>
+        <symbol id="i-cloud" viewBox="0 0 24 24">
+            <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
+                d="M7 18.5a4 4 0 0 1-.4-7.98A5.5 5.5 0 0 1 17.4 9.6 3.95 3.95 0 0 1 17 18.5H7Z" />
+        </symbol>
+        <symbol id="i-py" viewBox="0 0 24 24">
+            <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
+                d="M12 2.8c-3 0-4 1.3-4 3v2.4h4.2v.9H6.6c-1.9 0-3.1 1.4-3.1 4s1.1 4 3 4h1.3v-2.6c0-2 1.5-3.4 3.5-3.4h3.4c1.7 0 3-1.2 3-2.9V5.8c0-1.7-1.4-3-4.7-3Zm-1.6 1.9a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8Z" />
+            <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
+                d="M12 21.2c3 0 4-1.3 4-3v-2.4h-4.2v-.9h5.6c1.9 0 3.1-1.4 3.1-4s-1.1-4-3-4h-1.3v2.6c0 2-1.5 3.4-3.5 3.4H9.3c-1.7 0-3 1.2-3 2.9v2.4c0 1.7 1.4 3 4.7 3Zm1.6-1.9a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8Z" />
+        </symbol>
+        <symbol id="i-globe" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6" />
+            <path fill="none" stroke="currentColor" stroke-width="1.6"
+                d="M3.5 12h17M12 3.5c2.2 2.3 3.4 5.3 3.4 8.5S14.2 18.2 12 20.5c-2.2-2.3-3.4-5.3-3.4-8.5S9.8 5.8 12 3.5Z" />
+        </symbol>
+    </svg>
+
+    <!-- ============ ATMOSPHERE ============ -->
+    <canvas id="gl" aria-hidden="true"></canvas>
+    <div class="atmos-fallback" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+    <div class="scanline" aria-hidden="true"></div>
+
+    <!-- ============ CURSOR ============ -->
+    <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+    <div class="cursor-ring" id="cursorRing" aria-hidden="true">
+        <span class="cursor-label" id="cursorLabel"></span>
     </div>
 
-    <main>
-        <!-- Hero -->
+    <!-- ============ PRELOADER ============ -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <div class="loader-orbit">
+                <span class="lo-ring lo-r1"></span>
+                <span class="lo-ring lo-r2"></span>
+                <span class="lo-core"></span>
+            </div>
+            <div class="loader-name">
+                <span class="ln-mask"><span class="ln-text">ABDULLAH ALSHEHRI</span></span>
+            </div>
+            <div class="loader-meta">
+                <span class="loader-tag" data-i18n="loader.tag">Portfolio — 2026</span>
+                <span class="loader-count"><span id="loaderNum">0</span><i>%</i></span>
+            </div>
+            <div class="loader-bar"><span id="loaderBar"></span></div>
+        </div>
+        <div class="loader-curtain"></div>
+    </div>
+
+    <!-- ============ SCROLL PROGRESS ============ -->
+    <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+    <!-- ============ NAV ============ -->
+    <header class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#home" class="brand" data-cursor="link" aria-label="Abdullah Alshehri — home">
+                <span class="brand-mark">
+                    <svg viewBox="0 0 40 40" aria-hidden="true">
+                        <circle cx="20" cy="20" r="7.5" fill="none" stroke="currentColor" stroke-width="1.6" />
+                        <ellipse cx="20" cy="20" rx="17" ry="6" fill="none" stroke="currentColor" stroke-width="1.2"
+                            transform="rotate(-22 20 20)" opacity=".75" />
+                    </svg>
+                </span>
+                <span class="brand-text">AA</span>
+            </a>
+
+            <nav class="nav-links" aria-label="Primary">
+                <a href="#home" class="nav-link is-active" data-cursor="link"><i>01</i><span
+                        data-i18n="nav.home">Home</span></a>
+                <a href="#about" class="nav-link" data-cursor="link"><i>02</i><span
+                        data-i18n="nav.about">About</span></a>
+                <a href="#work" class="nav-link" data-cursor="link"><i>03</i><span data-i18n="nav.work">Work</span></a>
+                <a href="#path" class="nav-link" data-cursor="link"><i>04</i><span
+                        data-i18n="nav.path">Path</span></a>
+                <a href="#contact" class="nav-link" data-cursor="link"><i>05</i><span
+                        data-i18n="nav.contact">Contact</span></a>
+            </nav>
+
+            <div class="nav-side">
+                <button class="lang-toggle" id="langToggle" data-cursor="link" aria-label="Switch language">
+                    <svg class="lang-globe" aria-hidden="true">
+                        <use href="#i-globe" />
+                    </svg>
+                    <span class="lang-opt is-on" data-lang="en">EN</span>
+                    <span class="lang-sep">/</span>
+                    <span class="lang-opt" data-lang="ar">ع</span>
+                </button>
+                <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+                    <span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ MOBILE MENU ============ -->
+    <div class="menu" id="menu">
+        <div class="menu-list">
+            <a href="#home" class="menu-item"><i>01</i><span data-i18n="nav.home">Home</span></a>
+            <a href="#about" class="menu-item"><i>02</i><span data-i18n="nav.about">About</span></a>
+            <a href="#work" class="menu-item"><i>03</i><span data-i18n="nav.work">Work</span></a>
+            <a href="#path" class="menu-item"><i>04</i><span data-i18n="nav.path">Path</span></a>
+            <a href="#contact" class="menu-item"><i>05</i><span data-i18n="nav.contact">Contact</span></a>
+        </div>
+        <div class="menu-foot">
+            <a href="mailto:abd.alshehri.2004@gmail.com">abd.alshehri.2004@gmail.com</a>
+            <div class="menu-socials">
+                <a href="https://www.linkedin.com/in/abdullah-alshehri-596658250/" target="_blank" rel="noopener"
+                    aria-label="LinkedIn"><svg>
+                        <use href="#i-linkedin" />
+                    </svg></a>
+                <a href="https://github.com/iignlu/" target="_blank" rel="noopener" aria-label="GitHub"><svg>
+                        <use href="#i-github" />
+                    </svg></a>
+                <a href="https://discordapp.com/users/iignlu" target="_blank" rel="noopener" aria-label="Discord"><svg>
+                        <use href="#i-discord" />
+                    </svg></a>
+            </div>
+        </div>
+    </div>
+
+    <main id="main">
+
+        <!-- ============ HERO ============ -->
         <section id="home" class="hero">
-            <div class="container hero-grid">
-                <div class="hero-content">
-                    <div class="status-badge reveal">
-                        <span class="status-dot"></span>
-                        Open to opportunities
-                    </div>
-                    <h1 class="hero-name reveal">Abdullah<br>Alshehri</h1>
-                    <p class="hero-role reveal">Full-Stack Developer</p>
-                    <p class="hero-bio reveal">
-                        I build web apps with React and Laravel. Recently finished
-                        a co-op at Saudi Arabia Railways building internal tools
-                        and dashboards, and wrapping up my CS degree at
-                        Jubail Industrial College.
+            <div class="orbit" aria-hidden="true">
+                <div class="orbit-ring o1"><span class="orbit-node"></span></div>
+                <div class="orbit-ring o2"><span class="orbit-node"></span></div>
+                <div class="orbit-ring o3"><span class="orbit-node"></span></div>
+                <div class="orbit-core"></div>
+            </div>
+
+            <div class="shell hero-shell">
+                <div class="hero-top">
+                    <span class="pill" data-reveal>
+                        <span class="pulse"></span>
+                        <span data-i18n="hero.status">Open to opportunities</span>
+                    </span>
+                    <span class="hero-coords mono" data-reveal>26.9°N 49.6°E</span>
+                </div>
+
+                <h1 class="hero-name">
+                    <span class="hn-line" data-split="chars" data-i18n="hero.first">Abdullah</span>
+                    <span class="hn-line hn-out" data-split="chars" data-i18n="hero.last">Alshehri</span>
+                </h1>
+
+                <div class="hero-grid">
+                    <p class="hero-role" data-reveal>
+                        <span class="mono hero-role-idx">/ 01</span>
+                        <span data-i18n="hero.role">Full-Stack Developer</span>
                     </p>
-                    <div class="hero-actions reveal">
-                        <a href="#contact" class="btn btn-primary">
-                            Get in touch
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <a href="CV_Abdullah.pdf" class="btn btn-ghost" download>
-                            <i class="fas fa-download"></i>
-                            Resume
-                        </a>
-                    </div>
-                    <div class="hero-socials reveal">
-                        <a href="https://www.linkedin.com/in/abdullah-alshehri-596658250/" target="_blank"
-                            aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/iignlu/" target="_blank" aria-label="GitHub"><i
-                                class="fab fa-github"></i></a>
-                        <a href="https://discordapp.com/users/iignlu" target="_blank" aria-label="Discord"><i
-                                class="fab fa-discord"></i></a>
-                        <a href="mailto:abd.alshehri.2004@gmail.com" aria-label="Email"><i
-                                class="fas fa-envelope"></i></a>
-                    </div>
+                    <p class="hero-bio" data-split="words" data-i18n="hero.bio">
+                        I build web applications with React and Laravel. I spent my co-op at Saudi Arabia Railways
+                        building internal tools and dashboards for train operations, and I hold a BSc in Computer
+                        Science from Jubail Industrial College.
+                    </p>
                 </div>
-                <div class="hero-visual reveal">
-                    <div class="code-window">
-                        <div class="code-header">
-                            <div class="code-dots">
-                                <span class="dot dot-red"></span>
-                                <span class="dot dot-yellow"></span>
-                                <span class="dot dot-green"></span>
-                            </div>
-                            <span class="code-filename">about.json</span>
-                        </div>
-                        <pre class="code-body" id="codeContent"><code></code></pre>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Skills / Tech Stack -->
-        <section id="skills" class="section">
-            <div class="container">
-                <span class="section-label reveal">Skills</span>
-                <h2 class="section-heading reveal">My tech stack</h2>
-                <div class="stack-grid">
-                    <div class="stack-group reveal">
-                        <h3 class="stack-category">Frontend</h3>
-                        <div class="stack-items">
-                            <div class="stack-item"><i class="fab fa-react"></i><span>React</span></div>
-                            <div class="stack-item"><i class="fab fa-js"></i><span>JavaScript</span></div>
-                            <div class="stack-item"><i class="fab fa-html5"></i><span>HTML</span></div>
-                            <div class="stack-item"><i class="fab fa-css3-alt"></i><span>CSS</span></div>
-                        </div>
-                    </div>
-                    <div class="stack-group reveal">
-                        <h3 class="stack-category">Backend</h3>
-                        <div class="stack-items">
-                            <div class="stack-item"><i class="fab fa-laravel"></i><span>Laravel</span></div>
-                            <div class="stack-item"><i class="fab fa-php"></i><span>PHP</span></div>
-                            <div class="stack-item"><i class="fab fa-python"></i><span>Python</span></div>
-                            <div class="stack-item"><i class="fas fa-database"></i><span>SQL</span></div>
-                        </div>
-                    </div>
-                    <div class="stack-group reveal">
-                        <h3 class="stack-category">Tools &amp; Design</h3>
-                        <div class="stack-items">
-                            <div class="stack-item"><i class="fab fa-git-alt"></i><span>Git</span></div>
-                            <div class="stack-item"><i class="fab fa-github"></i><span>GitHub</span></div>
-                            <div class="stack-item"><i class="fab fa-figma"></i><span>Figma</span></div>
-                        </div>
+                <div class="hero-actions" data-reveal>
+                    <a href="#contact" class="btn btn-solid" data-magnetic data-cursor="link">
+                        <span data-i18n="hero.cta1">Get in touch</span>
+                        <svg class="btn-ico">
+                            <use href="#i-arrow" />
+                        </svg>
+                    </a>
+                    <a href="CV_Abdullah.pdf" class="btn btn-line" download data-magnetic data-cursor="link">
+                        <span data-i18n="hero.cta2">Resume</span>
+                        <svg class="btn-ico">
+                            <use href="#i-download" />
+                        </svg>
+                    </a>
+                    <div class="hero-socials">
+                        <a href="https://www.linkedin.com/in/abdullah-alshehri-596658250/" target="_blank" rel="noopener"
+                            data-cursor="link" aria-label="LinkedIn"><svg>
+                                <use href="#i-linkedin" />
+                            </svg></a>
+                        <a href="https://github.com/iignlu/" target="_blank" rel="noopener" data-cursor="link"
+                            aria-label="GitHub"><svg>
+                                <use href="#i-github" />
+                            </svg></a>
+                        <a href="https://discordapp.com/users/iignlu" target="_blank" rel="noopener" data-cursor="link"
+                            aria-label="Discord"><svg>
+                                <use href="#i-discord" />
+                            </svg></a>
+                        <a href="mailto:abd.alshehri.2004@gmail.com" data-cursor="link" aria-label="Email"><svg>
+                                <use href="#i-mail" />
+                            </svg></a>
                     </div>
                 </div>
             </div>
+
+            <a href="#about" class="scroll-cue" data-cursor="link" aria-label="Scroll down">
+                <span class="sc-line"></span>
+                <span class="mono" data-i18n="hero.scroll">Scroll</span>
+            </a>
         </section>
 
-        <!-- Experience -->
-        <section id="experience" class="section">
-            <div class="container">
-                <span class="section-label reveal">Background</span>
-                <h2 class="section-heading reveal">Experience &amp; Education</h2>
+        <!-- ============ TICKER ============ -->
+        <div class="ticker" aria-hidden="true">
+            <div class="ticker-track" id="tickerTrack">
+                <span class="ticker-set">
+                    <b>React</b><i>✦</i><b>Laravel</b><i>✦</i><b>PHP</b><i>✦</i><b>Python</b><i>✦</i><b>JavaScript</b><i>✦</i><b>SQL</b><i>✦</i><b>HTML</b><i>✦</i><b>CSS</b><i>✦</i><b>Git</b><i>✦</i><b>Figma</b><i>✦</i>
+                </span>
+            </div>
+        </div>
 
-                <div class="exp-grid">
-                    <div class="exp-card exp-education reveal">
-                        <div class="exp-type">Education</div>
-                        <h3>BSc Computer Science</h3>
-                        <p class="exp-org">Jubail Industrial College</p>
-                        <div class="exp-meta">
-                            <span><i class="fas fa-calendar-alt"></i> 2021 – 2026</span>
-                            <span><i class="fas fa-map-marker-alt"></i> Jubail, Saudi Arabia</span>
-                        </div>
-                    </div>
-
-                    <div class="exp-card exp-work reveal">
-                        <div class="exp-type">Co-op</div>
-                        <h3>Saudi Arabia Railways (SAR)</h3>
-                        <p class="exp-role">Co-op Trainee</p>
-                        <div class="exp-meta">
-                            <span><i class="fas fa-calendar-alt"></i> Jan 2025 – May 2026</span>
-                        </div>
-                        <ul class="exp-details">
-                            <li>Built a full-stack web app for tracking train trips, wagons, and cargo</li>
-                            <li>Created data entry forms and automated workflows for daily operations</li>
-                            <li>Designed KPI dashboards for monitoring operational performance</li>
-                            <li>Worked with the team to turn business requirements into working features</li>
-                        </ul>
-                    </div>
+        <!-- ============ ABOUT ============ -->
+        <section id="about" class="section">
+            <div class="shell">
+                <div class="sec-head">
+                    <span class="sec-idx mono">02</span>
+                    <span class="sec-label mono" data-i18n="about.label">About</span>
                 </div>
 
-                <!-- Achievements -->
-                <div class="achievements reveal">
-                    <h3 class="achievements-title">Achievements &amp; Certificates</h3>
-                    <div class="achievements-grid">
-                        <div class="achievement-item achievement-highlight">
-                            <div class="achievement-icon trophy">🏆</div>
-                            <div>
-                                <h4>1st Place — Programming Contest (CPC)</h4>
-                                <span>Computer Club, 2024</span>
+                <p class="statement" data-split="words" data-i18n-html="about.statement">
+                    I turn business requirements into software people actually use — from
+                    <em>train operations dashboards</em> at Saudi Arabia Railways to a
+                    <em>machine-learning model</em> that reads retinal scans.
+                </p>
+
+                <div class="about-grid">
+                    <div class="about-col">
+                        <p class="about-p" data-reveal data-i18n="about.p1">
+                            I am a Computer Science graduate from Jubail Industrial College, based in Jubail, Saudi
+                            Arabia. Most of my work sits where the frontend meets real operational data — forms people
+                            fill in every day, workflows that have to be right, and dashboards someone actually makes
+                            decisions from.
+                        </p>
+                        <p class="about-p" data-reveal data-i18n="about.p2">
+                            I like the part of the job where a vague requirement becomes a screen that works. React and
+                            Laravel are my daily tools; Python and SQL are where I go when the problem is data.
+                        </p>
+
+                        <div class="stats">
+                            <div class="stat" data-reveal>
+                                <span class="stat-num" data-count="1">1st</span>
+                                <span class="stat-cap mono" data-i18n="about.stat1">Place — CPC 2024</span>
+                            </div>
+                            <div class="stat" data-reveal>
+                                <span class="stat-num" data-count="6">6</span>
+                                <span class="stat-cap mono" data-i18n="about.stat2">Projects shipped</span>
+                            </div>
+                            <div class="stat" data-reveal>
+                                <span class="stat-num" data-count="2026">2026</span>
+                                <span class="stat-cap mono" data-i18n="about.stat3">BSc Computer Science</span>
                             </div>
                         </div>
-                        <div class="achievement-item">
-                            <div class="achievement-icon"><i class="fas fa-train"></i></div>
-                            <div>
-                                <h4>Certificate of Appreciation — Co-op Training</h4>
-                                <span>Saudi Arabia Railways (SAR)</span>
+                    </div>
+
+                    <div class="about-col about-terminal" data-reveal>
+                        <div class="term">
+                            <div class="term-bar">
+                                <span class="td td-r"></span><span class="td td-y"></span><span class="td td-g"></span>
+                                <span class="term-file mono">about.json</span>
                             </div>
+                            <pre class="term-body"><code id="termCode"></code></pre>
                         </div>
-                        <div class="achievement-item">
-                            <div class="achievement-icon"><i class="fab fa-google"></i></div>
-                            <div>
-                                <h4>Foundations: Data, Data, Everywhere</h4>
-                                <span>Google</span>
+
+                        <div class="stack">
+                            <div class="stack-row" data-reveal>
+                                <span class="stack-key mono" data-i18n="about.front">Frontend</span>
+                                <span class="stack-vals">React · JavaScript · HTML · CSS</span>
                             </div>
-                        </div>
-                        <div class="achievement-item">
-                            <div class="achievement-icon"><i class="fab fa-python"></i></div>
-                            <div>
-                                <h4>Python for Data Analysis: Pandas &amp; NumPy</h4>
-                                <span>Coursera</span>
+                            <div class="stack-row" data-reveal>
+                                <span class="stack-key mono" data-i18n="about.back">Backend</span>
+                                <span class="stack-vals">Laravel · PHP · Python · SQL</span>
                             </div>
-                        </div>
-                        <div class="achievement-item">
-                            <div class="achievement-icon"><i class="fas fa-cloud"></i></div>
-                            <div>
-                                <h4>SQL for BigQuery &amp; Cloud SQL</h4>
-                                <span>Google Cloud</span>
+                            <div class="stack-row" data-reveal>
+                                <span class="stack-key mono" data-i18n="about.tools">Tools</span>
+                                <span class="stack-vals">Git · GitHub · Figma</span>
                             </div>
                         </div>
                     </div>
@@ -211,145 +367,269 @@
             </div>
         </section>
 
-        <!-- Projects -->
-        <section id="projects" class="section">
-            <div class="container">
-                <span class="section-label reveal">Work</span>
-                <h2 class="section-heading reveal">Things I've built</h2>
-                <div class="projects-grid">
-                    <div class="project-card project-featured reveal">
-                        <div class="project-top">
-                            <div class="project-tags">
-                                <span class="tag tag-react">React</span>
-                                <span class="tag tag-laravel">Laravel</span>
-                            </div>
+        <!-- ============ WORK ============ -->
+        <section id="work" class="section section-work">
+            <div class="shell">
+                <div class="sec-head">
+                    <span class="sec-idx mono">03</span>
+                    <span class="sec-label mono" data-i18n="work.label">Selected work</span>
+                </div>
+                <h2 class="sec-title" data-split="chars" data-i18n="work.title">Things I've built</h2>
+
+                <div class="works" id="works">
+
+                    <a class="work" data-cursor="view" data-tint="0" href="#contact">
+                        <span class="work-idx mono">01</span>
+                        <span class="work-body">
+                            <span class="work-name" data-i18n="work.p1.name">Train Operations App</span>
+                            <span class="work-desc" data-i18n="work.p1.desc">Full-stack app for tracking train trips,
+                                wagons and cargo — data entry workflows plus KPI dashboards. Built during my co-op at
+                                SAR.</span>
+                        </span>
+                        <span class="work-tags">
+                            <span class="tag">React</span><span class="tag">Laravel</span>
+                        </span>
+                        <span class="work-flag mono" data-i18n="work.featured">Featured</span>
+                    </a>
+
+                    <a class="work" data-cursor="view" data-tint="1" href="#contact">
+                        <span class="work-idx mono">02</span>
+                        <span class="work-body">
+                            <span class="work-name" data-i18n="work.p2.name">Diabetic Retinopathy Detection</span>
+                            <span class="work-desc" data-i18n="work.p2.desc">A machine-learning model that analyses
+                                retinal images to flag early signs of diabetic retinopathy. My capstone project.</span>
+                        </span>
+                        <span class="work-tags">
+                            <span class="tag">Python</span><span class="tag">ML</span>
+                        </span>
+                    </a>
+
+                    <a class="work" data-cursor="view" data-tint="2" target="_blank" rel="noopener"
+                        href="https://www.figma.com/proto/HelFDeirEXoyU8EMXwmTDv/Portfolio?page-id=0%3A1&node-id=1-2&starting-point-node-id=1%3A2&scaling=scale-down&content-scaling=fixed&t=w2T3VpTPYyWc4i8H-1">
+                        <span class="work-idx mono">03</span>
+                        <span class="work-body">
+                            <span class="work-name" data-i18n="work.p3.name">Portfolio UI Design</span>
+                            <span class="work-desc" data-i18n="work.p3.desc">The Figma prototype I designed before
+                                building this site — my first end-to-end design-to-code project.</span>
+                        </span>
+                        <span class="work-tags">
+                            <span class="tag">Figma</span><span class="tag">UI/UX</span>
+                        </span>
+                    </a>
+
+                    <a class="work" data-cursor="view" data-tint="3" target="_blank" rel="noopener"
+                        href="https://www.figma.com/proto/iD14fiTcvIa8p8SMMcsFm0/Plant-Watering?node-id=1-1810&p=f&t=OsQGeEC3eX3hdjmR-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=6%3A28">
+                        <span class="work-idx mono">04</span>
+                        <span class="work-body">
+                            <span class="work-name" data-i18n="work.p4.name">Plant Watering System</span>
+                            <span class="work-desc" data-i18n="work.p4.desc">Mobile UI for an IoT plant monitor —
+                                soil-moisture tracking and watering alerts. Built for my HCI course.</span>
+                        </span>
+                        <span class="work-tags">
+                            <span class="tag">Figma</span><span class="tag">IoT</span>
+                        </span>
+                    </a>
+
+                    <a class="work" data-cursor="view" data-tint="4" target="_blank" rel="noopener"
+                        href="https://www.figma.com/proto/PzD6Wcc2sbsnxttANUyABM/CSIT-Project?node-id=33-382&p=f&t=eLSFOh6CJA3QyLi9-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A2120">
+                        <span class="work-idx mono">05</span>
+                        <span class="work-body">
+                            <span class="work-name" data-i18n="work.p5.name">Wikipedia Redesign</span>
+                            <span class="work-desc" data-i18n="work.p5.desc">A UI/UX competition entry modernising
+                                Wikipedia's interface, focused on readability and navigation.</span>
+                        </span>
+                        <span class="work-tags">
+                            <span class="tag">UI/UX</span><span class="tag" data-i18n="work.comp">Competition</span>
+                        </span>
+                    </a>
+
+                    <a class="work" data-cursor="view" data-tint="5" target="_blank" rel="noopener"
+                        href="https://alshehri-portfolio.netlify.app/">
+                        <span class="work-idx mono">06</span>
+                        <span class="work-body">
+                            <span class="work-name" data-i18n="work.p6.name">Portfolio v1</span>
+                            <span class="work-desc" data-i18n="work.p6.desc">My first portfolio, built with vanilla HTML
+                                and CSS. Where it all started.</span>
+                        </span>
+                        <span class="work-tags">
+                            <span class="tag">HTML</span><span class="tag">CSS</span>
+                        </span>
+                    </a>
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ============ PATH ============ -->
+        <section id="path" class="section">
+            <div class="shell">
+                <div class="sec-head">
+                    <span class="sec-idx mono">04</span>
+                    <span class="sec-label mono" data-i18n="path.label">Path</span>
+                </div>
+                <h2 class="sec-title" data-split="chars" data-i18n="path.title">Experience &amp; education</h2>
+
+                <div class="tl">
+                    <div class="tl-item" data-reveal>
+                        <div class="tl-dot"></div>
+                        <div class="tl-card">
+                            <div class="tl-kind mono" data-i18n="path.k1">Co-op</div>
+                            <h3 class="tl-org" data-i18n="path.org1">Saudi Arabia Railways (SAR)</h3>
+                            <p class="tl-role" data-i18n="path.r1">Co-op Trainee</p>
+                            <p class="tl-when mono"><svg>
+                                    <use href="#i-cal" />
+                                </svg><span data-i18n="path.d1">Jan 2025 — May 2026</span></p>
+                            <ul class="tl-list">
+                                <li data-i18n="path.b1">Built a full-stack web app for tracking train trips, wagons and
+                                    cargo</li>
+                                <li data-i18n="path.b2">Created data entry forms and automated daily operational
+                                    workflows</li>
+                                <li data-i18n="path.b3">Designed KPI dashboards for monitoring operational performance
+                                </li>
+                                <li data-i18n="path.b4">Worked with the team to turn business requirements into shipped
+                                    features</li>
+                            </ul>
                         </div>
-                        <h3>Train Operations App</h3>
-                        <p>Built during my co-op at SAR. A full-stack app for tracking train trips, wagons, and
-                            cargo — with data entry workflows and KPI dashboards.</p>
                     </div>
-                    <div class="project-card reveal">
-                        <div class="project-top">
-                            <div class="project-tags">
-                                <span class="tag tag-python">Python</span>
-                                <span class="tag tag-ml">ML</span>
-                            </div>
+
+                    <div class="tl-item" data-reveal>
+                        <div class="tl-dot"></div>
+                        <div class="tl-card">
+                            <div class="tl-kind mono" data-i18n="path.k2">Education</div>
+                            <h3 class="tl-org" data-i18n="path.o2">BSc Computer Science</h3>
+                            <p class="tl-role" data-i18n="path.col">Jubail Industrial College</p>
+                            <p class="tl-when mono"><svg>
+                                    <use href="#i-cal" />
+                                </svg><span>2021 — 2026</span></p>
+                            <p class="tl-when mono"><svg>
+                                    <use href="#i-pin" />
+                                </svg><span data-i18n="path.loc">Jubail, Saudi Arabia</span></p>
                         </div>
-                        <h3>Diabetic Retinopathy Detection</h3>
-                        <p>ML model that analyzes retinal images to flag early signs of diabetic retinopathy. Built
-                            with Python as a capstone project.</p>
                     </div>
-                    <div class="project-card reveal">
-                        <div class="project-top">
-                            <div class="project-tags">
-                                <span class="tag tag-figma">Figma</span>
-                                <span class="tag tag-design">UI/UX</span>
-                            </div>
-                            <a href="https://www.figma.com/proto/HelFDeirEXoyU8EMXwmTDv/Portfolio?page-id=0%3A1&node-id=1-2&starting-point-node-id=1%3A2&scaling=scale-down&content-scaling=fixed&t=w2T3VpTPYyWc4i8H-1"
-                                target="_blank" class="project-arrow" aria-label="View project"><i
-                                    class="fas fa-external-link-alt"></i></a>
-                        </div>
-                        <h3>Portfolio UI Design</h3>
-                        <p>The Figma prototype I designed before building this site. My first end-to-end
-                            design-to-code project.</p>
+                </div>
+
+                <h3 class="sub-title" data-reveal data-i18n="path.awards">Achievements &amp; certificates</h3>
+                <div class="awards">
+                    <div class="award award-top" data-reveal>
+                        <span class="award-ico"><svg>
+                                <use href="#i-trophy" />
+                            </svg></span>
+                        <span class="award-txt">
+                            <b data-i18n="path.a1">1st Place — Programming Contest (CPC)</b>
+                            <i data-i18n="path.a1s">Computer Club · 2024</i>
+                        </span>
                     </div>
-                    <div class="project-card reveal">
-                        <div class="project-top">
-                            <div class="project-tags">
-                                <span class="tag tag-figma">Figma</span>
-                                <span class="tag tag-iot">IoT</span>
-                            </div>
-                            <a href="https://www.figma.com/proto/iD14fiTcvIa8p8SMMcsFm0/Plant-Watering?node-id=1-1810&p=f&t=OsQGeEC3eX3hdjmR-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=6%3A28"
-                                target="_blank" class="project-arrow" aria-label="View project"><i
-                                    class="fas fa-external-link-alt"></i></a>
-                        </div>
-                        <h3>Plant Watering System</h3>
-                        <p>Mobile UI for an IoT plant monitoring system. Tracks soil moisture and sends watering
-                            alerts. Built for my HCI course.</p>
+                    <div class="award" data-reveal>
+                        <span class="award-ico"><svg>
+                                <use href="#i-train" />
+                            </svg></span>
+                        <span class="award-txt">
+                            <b data-i18n="path.a2">Certificate of Appreciation — Co-op Training</b>
+                            <i data-i18n="path.org1">Saudi Arabia Railways (SAR)</i>
+                        </span>
                     </div>
-                    <div class="project-card reveal">
-                        <div class="project-top">
-                            <div class="project-tags">
-                                <span class="tag tag-design">UI/UX</span>
-                                <span class="tag tag-comp">Competition</span>
-                            </div>
-                            <a href="https://www.figma.com/proto/PzD6Wcc2sbsnxttANUyABM/CSIT-Project?node-id=33-382&p=f&t=eLSFOh6CJA3QyLi9-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A2120"
-                                target="_blank" class="project-arrow" aria-label="View project"><i
-                                    class="fas fa-external-link-alt"></i></a>
-                        </div>
-                        <h3>Wikipedia Redesign</h3>
-                        <p>Entered a UI/UX design competition to modernize Wikipedia's interface. Focused on
-                            readability and navigation.</p>
+                    <div class="award" data-reveal>
+                        <span class="award-ico"><svg>
+                                <use href="#i-chart" />
+                            </svg></span>
+                        <span class="award-txt">
+                            <b>Foundations: Data, Data, Everywhere</b>
+                            <i>Google</i>
+                        </span>
                     </div>
-                    <div class="project-card reveal">
-                        <div class="project-top">
-                            <div class="project-tags">
-                                <span class="tag tag-web">HTML</span>
-                                <span class="tag tag-web">CSS</span>
-                            </div>
-                            <a href="https://alshehri-portfolio.netlify.app/" target="_blank" class="project-arrow"
-                                aria-label="View project"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                        <h3>Portfolio v1</h3>
-                        <p>My first portfolio — built with vanilla HTML and CSS. Where it all started.</p>
+                    <div class="award" data-reveal>
+                        <span class="award-ico"><svg>
+                                <use href="#i-py" />
+                            </svg></span>
+                        <span class="award-txt">
+                            <b>Python for Data Analysis: Pandas &amp; NumPy</b>
+                            <i>Coursera</i>
+                        </span>
+                    </div>
+                    <div class="award" data-reveal>
+                        <span class="award-ico"><svg>
+                                <use href="#i-cloud" />
+                            </svg></span>
+                        <span class="award-txt">
+                            <b>SQL for BigQuery &amp; Cloud SQL</b>
+                            <i>Google Cloud</i>
+                        </span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact -->
-        <section id="contact" class="section">
-            <div class="container">
-                <span class="section-label reveal">Contact</span>
-                <h2 class="section-heading reveal">Let's talk</h2>
-                <p class="section-subtitle reveal">Have a project in mind or just want to say hi? Reach out.</p>
+        <!-- ============ CONTACT ============ -->
+        <section id="contact" class="section section-contact">
+            <div class="shell">
+                <div class="sec-head">
+                    <span class="sec-idx mono">05</span>
+                    <span class="sec-label mono" data-i18n="contact.label">Contact</span>
+                </div>
+
+                <h2 class="shout" data-split="chars" data-i18n="contact.title">Let's talk</h2>
+                <p class="shout-sub" data-reveal data-i18n="contact.sub">Have a role, a project, or just want to say
+                    hi? My inbox is open.</p>
+
+                <a href="mailto:abd.alshehri.2004@gmail.com" class="mail-big" data-magnetic data-cursor="link">
+                    <span>abd.alshehri.2004@gmail.com</span>
+                    <svg>
+                        <use href="#i-arrow" />
+                    </svg>
+                </a>
+
                 <div class="contact-grid">
-                    <div class="contact-details reveal">
-                        <a href="mailto:abd.alshehri.2004@gmail.com" class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4>Email</h4>
-                                <span>abd.alshehri.2004@gmail.com</span>
-                            </div>
+                    <div class="contact-info">
+                        <a href="tel:+966536980276" class="cinfo" data-cursor="link">
+                            <svg>
+                                <use href="#i-phone" />
+                            </svg>
+                            <span><b class="mono" data-i18n="contact.phone">Phone</b>+966 53 698 0276</span>
                         </a>
-                        <a href="tel:+966536980276" class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h4>Phone</h4>
-                                <span>+966 53 698 0276</span>
-                            </div>
-                        </a>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4>Location</h4>
-                                <span>Jubail, Saudi Arabia</span>
-                            </div>
+                        <div class="cinfo">
+                            <svg>
+                                <use href="#i-pin" />
+                            </svg>
+                            <span><b class="mono" data-i18n="contact.loc">Location</b><span
+                                    data-i18n="path.loc">Jubail, Saudi Arabia</span></span>
+                        </div>
+                        <div class="cinfo">
+                            <svg>
+                                <use href="#i-cal" />
+                            </svg>
+                            <span><b class="mono" data-i18n="contact.local">Local time</b><span
+                                    id="clock">—</span></span>
                         </div>
                     </div>
-                    <form class="contact-form reveal" netlify>
+
+                    <form class="form" name="contact" method="POST" data-netlify="true"
+                        netlify-honeypot="bot-field">
+                        <input type="hidden" name="form-name" value="contact">
+                        <p class="hp"><label>Don't fill this out: <input name="bot-field"></label></p>
                         <div class="form-row">
-                            <div class="form-field">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" placeholder="Your name" required>
+                            <div class="field">
+                                <label for="name" class="mono" data-i18n="form.name">Name</label>
+                                <input type="text" id="name" name="name" required data-cursor="text">
                             </div>
-                            <div class="form-field">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                            <div class="field">
+                                <label for="email" class="mono" data-i18n="form.email">Email</label>
+                                <input type="email" id="email" name="email" required data-cursor="text">
                             </div>
                         </div>
-                        <div class="form-field">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
+                        <div class="field">
+                            <label for="subject" class="mono" data-i18n="form.subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required data-cursor="text">
                         </div>
-                        <div class="form-field">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..."
-                                required></textarea>
+                        <div class="field">
+                            <label for="message" class="mono" data-i18n="form.message">Message</label>
+                            <textarea id="message" name="message" rows="4" required data-cursor="text"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-full">
-                            Send message
-                            <i class="fas fa-paper-plane"></i>
+                        <button type="submit" class="btn btn-solid btn-wide" data-cursor="link">
+                            <span data-i18n="form.send">Send message</span>
+                            <svg class="btn-ico">
+                                <use href="#i-send" />
+                            </svg>
                         </button>
                     </form>
                 </div>
@@ -357,20 +637,33 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-inner">
-            <p class="footer-name">Abdullah Alshehri</p>
-            <div class="footer-links">
-                <a href="https://www.linkedin.com/in/abdullah-alshehri-596658250/" target="_blank"
-                    aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/iignlu/" target="_blank" aria-label="GitHub"><i
-                        class="fab fa-github"></i></a>
-                <a href="https://discordapp.com/users/iignlu" target="_blank" aria-label="Discord"><i
-                        class="fab fa-discord"></i></a>
-                <a href="mailto:abd.alshehri.2004@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    <!-- ============ FOOTER ============ -->
+    <footer class="foot">
+        <div class="shell">
+            <div class="foot-top">
+                <div class="foot-links">
+                    <a href="https://www.linkedin.com/in/abdullah-alshehri-596658250/" target="_blank" rel="noopener"
+                        data-cursor="link">LinkedIn <svg>
+                            <use href="#i-arrow" />
+                        </svg></a>
+                    <a href="https://github.com/iignlu/" target="_blank" rel="noopener" data-cursor="link">GitHub <svg>
+                            <use href="#i-arrow" />
+                        </svg></a>
+                    <a href="https://discordapp.com/users/iignlu" target="_blank" rel="noopener"
+                        data-cursor="link">Discord <svg>
+                            <use href="#i-arrow" />
+                        </svg></a>
+                    <a href="CV_Abdullah.pdf" download data-cursor="link"><span data-i18n="hero.cta2">Resume</span> <svg>
+                            <use href="#i-download" />
+                        </svg></a>
+                </div>
+                <a href="#home" class="to-top mono" data-cursor="link" data-i18n="foot.top">Back to top ↑</a>
             </div>
-            <p class="footer-copy">&copy; 2026</p>
+            <div class="foot-mark" aria-hidden="true" data-i18n="foot.mark">ALSHEHRI</div>
+            <div class="foot-base">
+                <span class="mono">© 2026 Abdullah Alshehri</span>
+                <span class="mono" data-i18n="foot.built">Built from scratch — HTML, CSS, WebGL</span>
+            </div>
         </div>
     </footer>
 
