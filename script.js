@@ -17,7 +17,7 @@
 
             'hero.status': 'Available for work',
             'hero.title': 'Abdullah Alshehri',
-            'hero.role': 'Full-Stack Developer',
+            'hero.role': 'Developer',
             'hero.bio': 'I build web applications with React and Laravel. I spent my co-op at Saudi Arabia Railways building internal tools and dashboards for train operations, and I hold a BSc in Computer Science from Jubail Industrial College.',
             'hero.cta1': 'Get in touch',
             'hero.cta2': 'Resume',
@@ -75,7 +75,7 @@
 
             'hero.status': 'متاح للعمل',
             'hero.title': 'عبدالله الشهري',
-            'hero.role': 'مطوّر ويب متكامل',
+            'hero.role': 'مطوّر',
             'hero.bio': 'أبني تطبيقات ويب باستخدام React و Laravel. قضيت تدريبي التعاوني في الخطوط الحديدية السعودية (سار) في بناء أدوات ولوحات مؤشرات داخلية لعمليات القطارات، وأحمل بكالوريوس علوم الحاسب من الكلية الصناعية بالجبيل.',
             'hero.cta1': 'تواصل معي',
             'hero.cta2': 'السيرة الذاتية',
