@@ -1207,15 +1207,28 @@ a.cline:hover {
         grid-template-columns: 1fr;
     }
 
+    /* date stacks above the content, so every item needs an explicit cell —
+       auto-placement would otherwise drop .tl-main into the 14px rail track */
     .tl-row {
         grid-template-columns: 14px minmax(0, 1fr);
-        gap: 1rem .9rem;
+        gap: 0 .9rem;
+    }
+
+    .tl-rail {
+        grid-column: 1;
+        grid-row: 1 / -1;
     }
 
     .tl-when {
         grid-column: 2;
+        grid-row: 1;
         padding-block-start: 0;
         margin-block-end: .3rem;
+    }
+
+    .tl-main {
+        grid-column: 2;
+        grid-row: 2;
     }
 }
 
