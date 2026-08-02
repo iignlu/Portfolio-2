@@ -14,7 +14,13 @@
     <meta property="og:description"
         content="React & Laravel. Train operations tooling at Saudi Arabia Railways. BSc Computer Science, Jubail Industrial College.">
     <meta property="og:url" content="https://aalshehri.site">
+    <!-- Social scrapers don't resolve relative paths — these must stay absolute -->
+    <meta property="og:image" content="https://aalshehri.site/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Abdullah Alshehri — Developer. React, Laravel, Python, SQL. Abha, Saudi Arabia.">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://aalshehri.site/og-image.png">
 
     <link rel="icon" type="image/png" href="/planet-ringed_12334918.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -223,7 +229,7 @@
                 <h2 class="h2 r" data-i18n="work.title">Things I've built</h2>
 
                 <div class="works">
-                    <a class="card work r" href="#contact" data-glow>
+                    <div class="card work r" data-glow>
                         <div class="card-body">
                             <span class="work-n">01</span>
                             <span class="star"><svg>
@@ -232,11 +238,12 @@
                             <h3 data-i18n="work.p1.name">Train Operations App</h3>
                             <p data-i18n="work.p1.desc">Full-stack app for tracking train trips, wagons and cargo — data
                                 entry workflows plus KPI dashboards. Built during my co-op at SAR.</p>
-                            <span class="chips"><span>React</span><span>Laravel</span></span>
+                            <span class="chips"><span>React</span><span>Laravel</span><span
+                                    data-i18n="work.internal">Internal system</span></span>
                         </div>
-                    </a>
+                    </div>
 
-                    <a class="card work r" href="#contact" data-glow>
+                    <div class="card work r" data-glow>
                         <div class="card-body">
                             <span class="work-n">02</span>
                             <h3 data-i18n="work.p2.name">Job Radar</h3>
@@ -245,15 +252,19 @@
                                 dependencies, runs free on GitHub Actions.</p>
                             <span class="chips"><span>Python</span><span data-i18n="work.auto">Automation</span></span>
                         </div>
-                    </a>
+                    </div>
 
-                    <a class="card work r" href="#contact" data-glow>
+                    <a class="card work r" target="_blank" rel="noopener" data-glow
+                        href="https://github.com/iignlu/Graduation-Project">
                         <div class="card-body">
                             <span class="work-n">03</span>
+                            <svg class="ext">
+                                <use href="#i-arrow" />
+                            </svg>
                             <h3 data-i18n="work.p3.name">Diabetic Retinopathy Detection</h3>
                             <p data-i18n="work.p3.desc">A machine-learning model that analyses retinal images to flag
                                 early signs of diabetic retinopathy. My capstone project.</p>
-                            <span class="chips"><span>Python</span><span>ML</span></span>
+                            <span class="chips"><span>Python</span><span>PyTorch</span><span>Flask</span></span>
                         </div>
                     </a>
 
