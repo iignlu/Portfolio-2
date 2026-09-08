@@ -810,6 +810,11 @@ a.card:hover {
     height: 9px;
 }
 
+/* a linked card already has the arrow in its corner — inset the badge past it */
+.star-inset {
+    inset-inline-end: calc(clamp(1.3rem, 2.4vw, 1.7rem) + 1.5rem);
+}
+
 .ext {
     position: absolute;
     inset-block-start: clamp(1.3rem, 2.4vw, 1.7rem);
