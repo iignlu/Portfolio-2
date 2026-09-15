@@ -61,6 +61,12 @@ html[lang="ar"] body * {
     letter-spacing: 0;
 }
 
+/* display face for the two big Arabic headings only — body and cards stay Sans */
+html[lang="ar"] .hero-title,
+html[lang="ar"] .h2 {
+    font-family: 'Thmanyah Serif Display', 'Thmanyah Sans', 'IBM Plex Sans Arabic', sans-serif;
+}
+
 html[lang="ar"] .hero-title {
     line-height: 1.5;
 }
