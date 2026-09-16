@@ -61,10 +61,14 @@ html[lang="ar"] body * {
     letter-spacing: 0;
 }
 
-/* display face for the two big Arabic headings only — body and cards stay Sans */
+/* display face for the two big Arabic headings only — body and cards stay Sans.
+   swsh is Thmanyah's swash set: it swaps an isolated/final ي for the long
+   sweeping tail the face is known for. Display sizes only — in running text a
+   swash on every ي is noise. */
 html[lang="ar"] .hero-title,
 html[lang="ar"] .h2 {
     font-family: 'Thmanyah Serif Display', 'Thmanyah Sans', 'IBM Plex Sans Arabic', sans-serif;
+    font-feature-settings: "swsh" 1;
 }
 
 html[lang="ar"] .hero-title {
