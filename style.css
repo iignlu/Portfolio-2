@@ -501,6 +501,43 @@ a.card:hover {
 .hero-in {
     position: relative;
     z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
+    align-items: center;
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+/* portrait is a cutout on transparent ground: a brand-tinted glow gives it a
+   surface to sit on, and the mask dissolves the chest crop into the page */
+.hero-photo {
+    position: relative;
+    justify-self: center;
+    width: min(100%, 400px);
+}
+
+.hero-photo::before {
+    content: '';
+    position: absolute;
+    inset: -14% -10% 2%;
+    z-index: 0;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at 50% 40%,
+            rgba(110, 138, 255, .38), rgba(192, 140, 255, .18) 48%, transparent 74%);
+    filter: blur(18px);
+    pointer-events: none;
+}
+
+.hero-photo img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    -webkit-mask-image: linear-gradient(to bottom, #000 44%, rgba(0, 0, 0, .72) 68%,
+            rgba(0, 0, 0, .28) 85%, transparent 99%);
+    mask-image: linear-gradient(to bottom, #000 44%, rgba(0, 0, 0, .72) 68%,
+            rgba(0, 0, 0, .28) 85%, transparent 99%);
+    filter: drop-shadow(0 20px 45px rgba(0, 0, 0, .55));
 }
 
 .badge {
@@ -1260,6 +1297,16 @@ a.cline:hover {
 
     /* date stacks above the content, so every item needs an explicit cell —
        auto-placement would otherwise drop .tl-main into the 14px rail track */
+    .hero-in {
+        grid-template-columns: 1fr;
+        gap: 1.6rem;
+    }
+
+    .hero-photo {
+        order: -1;
+        width: min(62%, 240px);
+    }
+
     .tl-row {
         grid-template-columns: 14px minmax(0, 1fr);
         gap: 0 .9rem;
