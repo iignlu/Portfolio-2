@@ -50,7 +50,7 @@ Then open <http://localhost:5599>.
 
 ## Contact
 
-- [abd.alshehri.2004@gmail.com](mailto:abd.alshehri.2004@gmail.com)
+- [Abdullah.alshehri11@outlook.sa](mailto:Abdullah.alshehri11@outlook.sa)
 - [LinkedIn](https://www.linkedin.com/in/abdullah-alshehri-596658250/)
 - [GitHub](https://github.com/iignlu/)
 
