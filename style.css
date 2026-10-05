@@ -843,6 +843,13 @@ a.card:hover {
     gap: .5rem;
 }
 
+/* only some cards carry a preview, so rows end up uneven. Keep the row heights
+   equal and push the chips and destination to the bottom edge, so a short card
+   reads as deliberate rather than as a half-empty box. */
+.work .chips {
+    margin-block-start: auto;
+}
+
 .work-n {
     font-family: var(--f-mono);
     font-size: .72rem;
@@ -915,6 +922,55 @@ a.card:hover {
 
 /* where the card actually goes — the arrow says "external", this says where.
    isolate keeps the URL reading left-to-right inside the Arabic page. */
+/* a rendered preview of where the card goes, screenshotted from the project
+   itself. Scrims keep the number, badge and arrow legible over a light shot and
+   blend the bottom edge into the card. */
+.work-shot {
+    position: relative;
+    display: block;
+    line-height: 0;
+    margin: calc(-1 * clamp(1.3rem, 2.4vw, 1.7rem));
+    margin-block-end: .9rem;
+    border-block-end: 1px solid var(--line);
+}
+
+.work-shot img {
+    display: block;
+    width: 100%;
+    /* a strip of the top of the page rather than the whole fold — a recognisable
+       glimpse, and it keeps the card from towering over its neighbours */
+    aspect-ratio: 2 / 1;
+    height: auto;
+    object-fit: cover;
+    object-position: top center;
+    opacity: .92;
+    transition: opacity .4s, transform .5s var(--ease);
+}
+
+.work:hover .work-shot img {
+    opacity: 1;
+}
+
+.work-shot::before,
+.work-shot::after {
+    content: '';
+    position: absolute;
+    inset-inline: 0;
+    pointer-events: none;
+}
+
+.work-shot::before {
+    inset-block-start: 0;
+    height: 46%;
+    background: linear-gradient(to bottom, rgba(10, 12, 17, .82), transparent);
+}
+
+.work-shot::after {
+    inset-block-end: 0;
+    height: 30%;
+    background: linear-gradient(to bottom, transparent, rgba(10, 12, 17, .75));
+}
+
 .work-link {
     unicode-bidi: isolate;
     margin-block-start: .5rem;
