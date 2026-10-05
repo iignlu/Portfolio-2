@@ -913,6 +913,22 @@ a.card:hover {
     transform: translate(2px, -2px);
 }
 
+/* where the card actually goes — the arrow says "external", this says where.
+   isolate keeps the URL reading left-to-right inside the Arabic page. */
+.work-link {
+    unicode-bidi: isolate;
+    margin-block-start: .5rem;
+    font-family: var(--f-mono);
+    font-size: .6rem;
+    letter-spacing: .03em;
+    color: var(--faint);
+    transition: color .35s;
+}
+
+.work:hover .work-link {
+    color: var(--a1);
+}
+
 .chips {
     display: flex;
     flex-wrap: wrap;
@@ -1036,6 +1052,9 @@ a.card:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
     gap: .7rem;
+    /* cards with a photo are much taller — let the text-only ones keep their
+       own height instead of stretching to match and showing a hollow box */
+    align-items: start;
 }
 
 .award .card-body {
@@ -1066,6 +1085,33 @@ a.card:hover {
     color: var(--bg);
     font-size: .8rem;
     margin-block-end: .45rem;
+}
+
+/* an award that carries a photo of the moment: full-bleed above the text, with a
+   scrim so the image dissolves into the card instead of ending on a hard edge */
+.award-photo .card-body {
+    height: auto;
+}
+
+.award-shot {
+    position: relative;
+    line-height: 0;
+}
+
+.award-shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.award-shot::after {
+    content: '';
+    position: absolute;
+    inset-inline: 0;
+    inset-block-end: -1px;
+    height: 42%;
+    background: linear-gradient(to bottom, transparent, rgba(10, 12, 17, .55) 55%, var(--bg));
+    pointer-events: none;
 }
 
 .award-lead {
