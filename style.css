@@ -915,6 +915,11 @@ a.card:hover {
     transition: color .3s, transform .35s var(--ease);
 }
 
+.work-shot ~ .ext,
+.work-shot + .ext {
+    filter: drop-shadow(0 1px 3px rgba(10, 12, 17, .9));
+}
+
 .work:hover .ext {
     color: var(--a1);
     transform: translate(2px, -2px);
@@ -961,14 +966,14 @@ a.card:hover {
 
 .work-shot::before {
     inset-block-start: 0;
-    height: 46%;
-    background: linear-gradient(to bottom, rgba(10, 12, 17, .82), transparent);
+    height: 30%;
+    background: linear-gradient(to bottom, rgba(10, 12, 17, .58), transparent);
 }
 
 .work-shot::after {
     inset-block-end: 0;
-    height: 30%;
-    background: linear-gradient(to bottom, transparent, rgba(10, 12, 17, .75));
+    height: 16%;
+    background: linear-gradient(to bottom, transparent, rgba(10, 12, 17, .4));
 }
 
 .work-link {
