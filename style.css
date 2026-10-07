@@ -507,6 +507,65 @@ a.card:hover {
     gap: clamp(1.5rem, 4vw, 3.5rem);
 }
 
+/* a small notification that cycles the headline facts. Anchored to the content
+   column's end edge, so it mirrors with the rest of the page under RTL. */
+.hero-note {
+    position: absolute;
+    z-index: 3;
+    inset-block-end: 0;
+    inset-inline-end: 0;
+    display: flex;
+    align-items: center;
+    gap: .72rem;
+    max-width: min(330px, 80%);
+    padding: .72rem .9rem;
+    border: 1px solid var(--line-2);
+    border-radius: 14px;
+    background: rgba(13, 16, 25, .72);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    box-shadow: 0 18px 42px rgba(0, 0, 0, .5);
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(14px) scale(.97);
+    transition: opacity .5s var(--ease), transform .5s var(--ease);
+}
+
+.hero-note.in {
+    opacity: 1;
+    transform: none;
+}
+
+.note-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex: none;
+    background: var(--grad);
+    box-shadow: 0 0 0 4px rgba(110, 138, 255, .13);
+}
+
+.note-body {
+    display: flex;
+    flex-direction: column;
+    gap: .15rem;
+    min-width: 0;
+}
+
+.note-kick {
+    font-family: var(--f-mono);
+    font-size: .55rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--a1);
+}
+
+.note-title {
+    font-size: .85rem;
+    line-height: 1.35;
+    color: var(--text);
+}
+
 /* portrait is a cutout on transparent ground: a brand-tinted glow gives it a
    surface to sit on, and the mask dissolves the chest crop into the page */
 .hero-photo {
@@ -1412,6 +1471,17 @@ a.cline:hover {
     .hero-photo {
         order: -1;
         width: min(62%, 240px);
+    }
+
+    /* stacked layout leaves nowhere to float it without covering something, so
+       it sits in the flow — above the portrait, where it is on screen without
+       scrolling and reads the way a real notification arrives */
+    .hero-note {
+        position: static;
+        order: -2;
+        max-width: none;
+        margin-block-end: 1.3rem;
+        transform: translateY(10px) scale(.98);
     }
 
     .tl-row {

@@ -22,6 +22,12 @@
             'hero.cta1': 'Get in touch',
             'hero.cta2': 'Resume',
 
+            'hero.n1k': 'Award', 'hero.n1t': '1st Place — Venture X 26',
+            'hero.n2k': 'Award', 'hero.n2t': 'Winner — Sakanthon 26',
+            'hero.n3k': 'Project', 'hero.n3t': 'Harf — 36% lower Arabic AI cost',
+            'hero.n4k': 'Project', 'hero.n4t': 'Job Radar — free on GitHub Actions',
+            'hero.n5k': 'Experience', 'hero.n5t': 'Co-op at Saudi Arabia Railways',
+
             'about.label': 'About',
             'about.lead': 'I turn business requirements into <em>software people actually use.</em>',
             'about.p1': 'Most of my work sits where the frontend meets real operational data — forms people fill in every day, workflows that have to be right, and dashboards someone actually makes decisions from.',
@@ -92,6 +98,12 @@
             'hero.bio': 'أبني تطبيقات ويب باستخدام React و Laravel. قضيت تدريبي التعاوني في الخطوط الحديدية السعودية (سار) في بناء أدوات ولوحات مؤشرات داخلية لعمليات القطارات، وأحمل بكالوريوس علوم الحاسب من الكلية الصناعية بالجبيل.',
             'hero.cta1': 'تواصل معي',
             'hero.cta2': 'السيرة الذاتية',
+
+            'hero.n1k': 'إنجاز', 'hero.n1t': 'المركز الأول — Venture X 26',
+            'hero.n2k': 'إنجاز', 'hero.n2t': 'الفائز — سكنثون 26',
+            'hero.n3k': 'مشروع', 'hero.n3t': 'حَرف — تكلفة أقل بـ 36%',
+            'hero.n4k': 'مشروع', 'hero.n4t': 'رادار الوظائف — تنبيهات مجانية',
+            'hero.n5k': 'خبرة', 'hero.n5t': 'تدريب تعاوني في سار',
 
             'about.label': 'نبذة',
             'about.lead': 'أحوّل متطلبات العمل إلى <em>برمجيات يستخدمها الناس فعلًا.</em>',
@@ -177,6 +189,52 @@
 
         var lbl = document.getElementById('langLabel');
         if (lbl) lbl.textContent = lang === 'en' ? 'عربي' : 'English';
+    }
+
+    /* ---------------- hero notifications ----------------
+       Cycles the headline facts past the hero. The two spans keep their
+       data-i18n attributes in step with whichever note is showing, so a
+       language switch mid-cycle is translated by applyLang like anything
+       else. Decorative: every fact appears in full further down the page,
+       so it is aria-hidden and never announced. */
+    var NOTES = [
+        ['hero.n1k', 'hero.n1t'],
+        ['hero.n2k', 'hero.n2t'],
+        ['hero.n3k', 'hero.n3t'],
+        ['hero.n4k', 'hero.n4t'],
+        ['hero.n5k', 'hero.n5t']
+    ];
+    var noteEl, noteKick, noteTitle, noteIdx = 0;
+
+    function paintNote() {
+        var pair = NOTES[noteIdx], d = DICT[lang];
+        noteKick.setAttribute('data-i18n', pair[0]);
+        noteTitle.setAttribute('data-i18n', pair[1]);
+        noteKick.textContent = d[pair[0]] || '';
+        noteTitle.textContent = d[pair[1]] || '';
+    }
+
+    function initNotes() {
+        noteEl = document.getElementById('heroNote');
+        if (!noteEl) return;
+        noteKick = noteEl.querySelector('.note-kick');
+        noteTitle = noteEl.querySelector('.note-title');
+        paintNote();
+
+        // reduced motion: show one and leave it alone, no movement and no
+        // content swapping underneath the reader
+        if (reduce) { noteEl.classList.add('in'); return; }
+
+        setTimeout(function () { noteEl.classList.add('in'); }, 900);
+        setInterval(function () {
+            if (noteEl.getBoundingClientRect().bottom < 0) return;   // hero scrolled past
+            noteEl.classList.remove('in');
+            setTimeout(function () {
+                noteIdx = (noteIdx + 1) % NOTES.length;
+                paintNote();
+                noteEl.classList.add('in');
+            }, 520);
+        }, 4200);
     }
 
     /* ---------------- reveal ----------------
@@ -271,6 +329,7 @@
     /* ---------------- boot ---------------- */
     function boot() {
         applyLang(lang);
+        initNotes();
         initReveal();
         initGlow();
         tickClock();
