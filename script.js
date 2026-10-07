@@ -18,7 +18,7 @@
             'hero.status': 'Available for work',
             'hero.title': 'Abdullah Alshehri',
             'hero.role': 'Developer',
-            'hero.bio': 'I build web applications with React and Laravel. I spent my co-op at Saudi Arabia Railways building internal tools and dashboards for train operations, and I hold a BSc in Computer Science from Jubail Industrial College.',
+            'hero.bio': 'I build software end to end — web apps with React and Laravel, and AI in Python, from Arabic NLP to computer vision. I spent my co-op at Saudi Arabia Railways building internal tools and dashboards for train operations, and I hold a BSc in Computer Science from Jubail Industrial College.',
             'hero.cta1': 'Get in touch',
             'hero.cta2': 'Resume',
 
@@ -30,9 +30,9 @@
 
             'about.label': 'About',
             'about.lead': 'I turn business requirements into <em>software people actually use.</em>',
-            'about.p1': 'Most of my work sits where the frontend meets real operational data — forms people fill in every day, workflows that have to be right, and dashboards someone actually makes decisions from.',
-            'about.p2': 'React and Laravel are my daily tools; Python and SQL are where I go when the problem is data.',
-            'about.front': 'Frontend', 'about.back': 'Backend', 'about.tools': 'Tools',
+            'about.p1': 'I like working on the whole problem rather than one layer of it — the app people use every day, the workflows that have to be right behind it, and the model or pipeline that makes it worth using at all.',
+            'about.p2': 'React and Laravel for product work; Python when the problem is data or a model — a Swin Transformer V2 that grades retinal scans, and an Arabic layer that routes each request to the cheapest model still able to answer it well.',
+            'about.web': 'Web', 'about.ai': 'AI & Data', 'about.tools': 'Tools',
 
             'work.label': 'Selected work',
             'work.title': "Things I've built",
@@ -95,7 +95,7 @@
             'hero.status': 'متاح للعمل',
             'hero.title': 'عبدالله الشهري',
             'hero.role': 'مطوّر',
-            'hero.bio': 'أبني تطبيقات ويب باستخدام React و Laravel. قضيت تدريبي التعاوني في الخطوط الحديدية السعودية (سار) في بناء أدوات ولوحات مؤشرات داخلية لعمليات القطارات، وأحمل بكالوريوس علوم الحاسب من الكلية الصناعية بالجبيل.',
+            'hero.bio': 'أبني البرمجيات من طرفها إلى طرفها — تطبيقات ويب بـ React و Laravel، وذكاء اصطناعي بـ Python من معالجة اللغة العربية إلى الرؤية الحاسوبية. قضيت تدريبي التعاوني في الخطوط الحديدية السعودية (سار) في بناء أدوات ولوحات مؤشرات داخلية لعمليات القطارات، وأحمل بكالوريوس علوم الحاسب من الكلية الصناعية بالجبيل.',
             'hero.cta1': 'تواصل معي',
             'hero.cta2': 'السيرة الذاتية',
 
@@ -107,9 +107,9 @@
 
             'about.label': 'نبذة',
             'about.lead': 'أحوّل متطلبات العمل إلى <em>برمجيات يستخدمها الناس فعلًا.</em>',
-            'about.p1': 'معظم عملي يقع عند التقاء الواجهة الأمامية ببيانات التشغيل الحقيقية — نماذج يعبّئها الموظفون كل يوم، وإجراءات لا تحتمل الخطأ، ولوحات مؤشرات يُبنى عليها قرار فعلي.',
-            'about.p2': 'React و Laravel أدواتي اليومية، وأتّجه إلى Python و SQL حين تكون المشكلة في البيانات.',
-            'about.front': 'الواجهة', 'about.back': 'الخلفية', 'about.tools': 'الأدوات',
+            'about.p1': 'أحب أشتغل على المشكلة كاملة، لا على طبقة واحدة منها — التطبيق اللي يستخدمه الناس كل يوم، والإجراءات اللي ما تحتمل الخطأ خلفه، والنموذج أو المسار اللي يخلّيه يستحق الاستخدام أصلًا.',
+            'about.p2': 'React و Laravel لبناء المنتج، و Python حين تكون المشكلة في البيانات أو في نموذج — نموذج Swin Transformer V2 يصنّف صور الشبكية، وطبقة عربية توجّه كل طلب إلى أوفر نموذج قادر على الإجابة بجودة.',
+            'about.web': 'الويب', 'about.ai': 'الذكاء والبيانات', 'about.tools': 'الأدوات',
 
             'work.label': 'أعمال مختارة',
             'work.title': 'أشياء بنيتها',
